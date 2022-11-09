@@ -1,0 +1,111 @@
+[ {
+  "uid" : "90bf020d0eb5ba75",
+  "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+  "time" : {
+    "start" : 1665121830574,
+    "stop" : 1665121894209,
+    "duration" : 63635
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "eb9689b79e78b59d",
+  "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+  "time" : {
+    "start" : 1665122119183,
+    "stop" : 1665122183109,
+    "duration" : 63926
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "a1cd2b97e2ae0085",
+  "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+  "time" : {
+    "start" : 1665121587300,
+    "stop" : 1665121661072,
+    "duration" : 73772
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "74c1e4a6bb287cd8",
+  "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+  "time" : {
+    "start" : 1665121969177,
+    "stop" : 1665122052561,
+    "duration" : 83384
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "3ee3955d1dbd4300",
+  "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+  "time" : {
+    "start" : 1665121711163,
+    "stop" : 1665121754238,
+    "duration" : 43075
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "14f9604afc5eb2a5",
+  "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+  "time" : {
+    "start" : 1665121894370,
+    "stop" : 1665121969014,
+    "duration" : 74644
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "d6370b19a77ad240",
+  "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+  "time" : {
+    "start" : 1665122053025,
+    "stop" : 1665122119006,
+    "duration" : 65981
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "1bd4b59687b10276",
+  "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+  "time" : {
+    "start" : 1665121661684,
+    "stop" : 1665121710970,
+    "duration" : 49286
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "603d2370a8f6f783",
+  "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+  "time" : {
+    "start" : 1665121795410,
+    "stop" : 1665121830437,
+    "duration" : 35027
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "ed7a18bece20d8e3",
+  "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+  "time" : {
+    "start" : 1665122183271,
+    "stop" : 1665122195476,
+    "duration" : 12205
+  },
+  "status" : "skipped",
+  "severity" : "normal"
+}, {
+  "uid" : "b8294088fac35c17",
+  "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+  "time" : {
+    "start" : 1665121754376,
+    "stop" : 1665121795231,
+    "duration" : 40855
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

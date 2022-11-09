@@ -1,0 +1,31 @@
+sso:    val=False
+Caught mark_xfail fixture
+PARAM: No fail expected
+NODE.NAME: test__scenario__scan__v4_lite_buy_fuel[TPI]
+H:      val=True
+ENV:    val=STA
+I:      val=90
+IS:     val=5
+PMP:    val=None
+PM:     val=None
+CCB:    val=None
+DAT:    val=None
+SCAV:   val=None
+MTR:    val=None
+N:      val=False
+MWM:    val=4931234567890
+MWU:    val=None
+No New Payment Setup will be used
+C:      val=Germany
+L:      val=German
+UN:     val=1
+GS:     val=NoOp_DE__Automatic__STA
+PN:     val=P0
+FN:     val=F0
+SM:     val=Equal
+EPB:    val=PumpFree
+JC:  no_val=True
+
+SHC: no_val=True
+AHC: no_val=True
+kafka-checks:    val=False

@@ -1,0 +1,220 @@
+{
+  "09b202213dfa962a5c1a8b2916ff1cc7" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b8294088fac35c17",
+      "status" : "passed",
+      "time" : {
+        "start" : 1665121754376,
+        "stop" : 1665121795231,
+        "duration" : 40855
+      }
+    } ]
+  },
+  "b677196f89adcaae874adae484940f8a" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "14f9604afc5eb2a5",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: Checking if amount of errors collected by Invoice Worker = 0\nAmount of errors for Invoice Worker (1) was not 0! - error list:\n\nError[0]: Checking PERSONAL INFO in invoice PDF: [ACTUAL, EXPECTED] ['TestFirstName TestLastName' == 'TestFirstName TestLastName'] ['80636 München' == '80636 München'] \nPERSONAL INFO didn't match invoice:Expected values of ['Blutenburgstrasse 18' ] not found in PDF: ['TestFirstName TestLastName', 'Blutenburgstrasse18', '80636 München']",
+      "time" : {
+        "start" : 1665121894370,
+        "stop" : 1665121969014,
+        "duration" : 74644
+      }
+    } ]
+  },
+  "d0b79df03365442aea20606782e645a0" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "d6370b19a77ad240",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: Checking if amount of errors collected by Invoice Worker = 0\nAmount of errors for Invoice Worker (1) was not 0! - error list:\n\nError[0]: Checking PERSONAL INFO in invoice PDF: [ACTUAL, EXPECTED] ['TestFirstName TestLastName' == 'TestFirstName TestLastName'] ['80636 München' == '80636 München'] \nPERSONAL INFO didn't match invoice:Expected values of ['Blutenburgstrasse 18' ] not found in PDF: ['TestFirstName TestLastName', 'Blutenburgstrasse18', '80636 München']",
+      "time" : {
+        "start" : 1665122053025,
+        "stop" : 1665122119006,
+        "duration" : 65981
+      }
+    } ]
+  },
+  "5c0980f61f5a4aa27a962499fd3c2dce" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "1bd4b59687b10276",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: Checking if amount of errors collected by Invoice Worker = 0\nAmount of errors for Invoice Worker (1) was not 0! - error list:\n\nError[0]: Checking PERSONAL INFO in invoice PDF: [ACTUAL, EXPECTED] ['TestFirstName TestLastName' == 'TestFirstName TestLastName'] ['80636 München' == '80636 München'] \nPERSONAL INFO didn't match invoice:Expected values of ['Blutenburgstrasse 18' ] not found in PDF: ['TestFirstName TestLastName', 'Blutenburgstrasse18', '80636 München']",
+      "time" : {
+        "start" : 1665121661684,
+        "stop" : 1665121710970,
+        "duration" : 49286
+      }
+    } ]
+  },
+  "0e0b5a0b8e74d1501196027b0531466f" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "eb9689b79e78b59d",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: Checking if amount of errors collected by Invoice Worker = 0\nAmount of errors for Invoice Worker (1) was not 0! - error list:\n\nError[0]: Checking PERSONAL INFO in invoice PDF: [ACTUAL, EXPECTED] ['TestFirstName TestLastName' == 'TestFirstName TestLastName'] ['80636 München' == '80636 München'] \nPERSONAL INFO didn't match invoice:Expected values of ['Blutenburgstrasse 18' ] not found in PDF: ['TestFirstName TestLastName', 'Blutenburgstrasse18', '80636 München']",
+      "time" : {
+        "start" : 1665122119183,
+        "stop" : 1665122183109,
+        "duration" : 63926
+      }
+    } ]
+  },
+  "40ebf1da3b91b616c30071349460051d" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "ed7a18bece20d8e3",
+      "status" : "skipped",
+      "statusDetails" : "XFAIL Expected failure due to a combination of payment-method and country.\n\nFailed: Stopping test.\nPaymentProvider.SIBS, PaymentMethod.MB_WAY\t was NOT in the expected country payment method set:\n{(Braintree, PayPal), (MPGS, GooglePay), (ThinxNet, PostPayUser), (MPGS, CreditCard), (ThinxNet, PostPayPartner), (Concardis, DebitCard)}",
+      "time" : {
+        "start" : 1665122183271,
+        "stop" : 1665122195476,
+        "duration" : 12205
+      }
+    } ]
+  },
+  "1598d7216e408d961e2054b789f6c017" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "603d2370a8f6f783",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: Checking if amount of errors collected by Invoice Worker = 0\nAmount of errors for Invoice Worker (1) was not 0! - error list:\n\nError[0]: Checking PERSONAL INFO in invoice PDF: [ACTUAL, EXPECTED] ['TestFirstName TestLastName' == 'TestFirstName TestLastName'] ['80636 München' == '80636 München'] \nPERSONAL INFO didn't match invoice:Expected values of ['Blutenburgstrasse 18' ] not found in PDF: ['TestFirstName TestLastName', 'Blutenburgstrasse18', '80636 München']",
+      "time" : {
+        "start" : 1665121795410,
+        "stop" : 1665121830437,
+        "duration" : 35027
+      }
+    } ]
+  },
+  "412a847d4996636806e8b5d5e33ef7bd" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "3ee3955d1dbd4300",
+      "status" : "passed",
+      "time" : {
+        "start" : 1665121711163,
+        "stop" : 1665121754238,
+        "duration" : 43075
+      }
+    } ]
+  },
+  "9e29792f54774884f371e360b93f5c04" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "74c1e4a6bb287cd8",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: Checking if amount of errors collected by Invoice Worker = 0\nAmount of errors for Invoice Worker (1) was not 0! - error list:\n\nError[0]: Checking PERSONAL INFO in invoice PDF: [ACTUAL, EXPECTED] ['TestFirstName TestLastName' == 'TestFirstName TestLastName'] ['80636 München' == '80636 München'] \nPERSONAL INFO didn't match invoice:Expected values of ['Blutenburgstrasse 18' ] not found in PDF: ['TestFirstName TestLastName', 'Blutenburgstrasse18', '80636 München']",
+      "time" : {
+        "start" : 1665121969177,
+        "stop" : 1665122052561,
+        "duration" : 83384
+      }
+    } ]
+  },
+  "6377b9fbc67c10b4c0adcb7d002fb3f0" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "90bf020d0eb5ba75",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: Checking if amount of errors collected by Invoice Worker = 0\nAmount of errors for Invoice Worker (1) was not 0! - error list:\n\nError[0]: Checking PERSONAL INFO in invoice PDF: [ACTUAL, EXPECTED] ['TestFirstName TestLastName' == 'TestFirstName TestLastName'] ['80636 München' == '80636 München'] \nPERSONAL INFO didn't match invoice:Expected values of ['Blutenburgstrasse 18' ] not found in PDF: ['TestFirstName TestLastName', 'Blutenburgstrasse18', '80636 München']",
+      "time" : {
+        "start" : 1665121830574,
+        "stop" : 1665121894209,
+        "duration" : 63635
+      }
+    } ]
+  },
+  "54764e3316747c6da39019373a4ab275" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a1cd2b97e2ae0085",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: Checking if amount of errors collected by Invoice Worker = 0\nAmount of errors for Invoice Worker (1) was not 0! - error list:\n\nError[0]: Checking PERSONAL INFO in invoice PDF: [ACTUAL, EXPECTED] ['TestFirstName TestLastName' == 'TestFirstName TestLastName'] ['80636 München' == '80636 München'] \nPERSONAL INFO didn't match invoice:Expected values of ['Blutenburgstrasse 18' ] not found in PDF: ['TestFirstName TestLastName', 'Blutenburgstrasse18', '80636 München']",
+      "time" : {
+        "start" : 1665121587300,
+        "stop" : 1665121661072,
+        "duration" : 73772
+      }
+    } ]
+  }
+}
