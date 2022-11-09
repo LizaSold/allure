@@ -1,0 +1,7 @@
+  0%|          | 0/20 [00:00<?, ?it/s]  0%|          | 0/20 [00:01<?, ?it/s]
+  0%|          | 0/90 [00:00<?, ?it/s]  1%|          | 1/90 [00:05<07:51,  5.30s/it]  2%|▏         | 2/90 [00:10<07:46,  5.30s/it]  3%|▎         | 3/90 [00:16<07:53,  5.44s/it]  3%|▎         | 3/90 [00:21<10:25,  7.19s/it]
+  0%|          | 0/90 [00:00<?, ?it/s]  0%|          | 0/90 [00:05<?, ?it/s]
+  0%|          | 0/60 [00:00<?, ?it/s]PendingDeprecationWarning: PdfFileReader was renamed to PdfReader. PdfFileReader will be removed [model.py:205]
+  0%|          | 0/60 [00:10<?, ?it/s]
+PendingDeprecationWarning: PdfFileReader was renamed to PdfReader. PdfFileReader will be removed [model.py:205]
+PendingDeprecationWarning: PdfFileReader was renamed to PdfReader. PdfFileReader will be removed [model.py:205]

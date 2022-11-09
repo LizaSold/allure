@@ -1,0 +1,46 @@
+sso:    val=False
+Caught mark_xfail fixture
+PARAM: No fail expected
+NODE.NAME: test__scenario__scan__v4_lite_buy_fuel[BP]
+H:      val=True
+ENV:    val=STA
+I:      val=90
+IS:     val=5
+PMP:    val=None
+PM:     val=None
+CCB:    val=None
+DAT:    val=None
+SCAV:   val=None
+MTR:    val=None
+N:      val=False
+MWM:    val=4931234567890
+MWU:    val=None
+No New Payment Setup will be used
+C:      val=Germany
+L:      val=German
+UN:     val=3
+GS:     val=Hectronic_Regression_DE__Automatic_STA
+PN:     val=P0
+FN:     val=NONE
+SM:     val=Equal
+EPB:    val=PumpFree
+JC:  no_val=True
+
+SHC: no_val=True
+AHC: no_val=True
+kafka-checks:    val=False
+Debugging webdriver
+INFO: PAYPAL SETUP:	Setting up PayPal account
+INFO: PAYPAL SETUP:	Using helium with headless = True
+INFO: PAYPAL SETUP:	Starting chrome driver with URL=http://127.0.0.1:8050/API/EXTERNAL/BraintreeNonceGeneration/index.html
+headless=True	options=<selenium.webdriver.chrome.options.Options object at 0x7f913d2f85e0>
+INFO: PAYPAL SETUP:	Chrome started
+INFO: PAYPAL SETUP:	driver=<selenium.webdriver.chrome.webdriver.WebDriver (session="76dc0add57467a39a1bf935cb3a14a6e")>
+WARNING: PAYPAL SETUP:	Sleeping for 4 seconds
+INFO: PAYPAL SETUP:	Starting window handles: ['CDwindow-6F436FE29139B3899CE3ED2E2B62DA28']
+Nonce page:	Clicking on 'paypal_button'
+2
+INFO: PAYPAL SETUP:	Ending window handles: ['CDwindow-6F436FE29139B3899CE3ED2E2B62DA28', 'CDwindow-A7FE815C80C41EDA7940284835B24162']
+Nonce page:	Got nonce: 7d63cc22-966a-01e5-74af-d62a0d6af5a9
+INFO: PAYPAL SETUP:	Ending Helium
+INFO: PAYPAL SETUP:	Ending

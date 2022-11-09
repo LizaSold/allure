@@ -1,0 +1,149 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: Checking if amount of errors collected by Invoice Worker = 0\nAmount of errors for Invoice Worker (1) was not 0! - error list:\n\nError[0]: Checking PERSONAL INFO in invoice PDF: [ACTUAL, EXPECTED] ['TestFirstName TestLastName' == 'TestFirstName TestLastName'] ['80636 München' == '80636 München'] \nPERSONAL INFO didn't match invoice:Expected values of ['Blutenburgstrasse 18' ] not found in PDF: ['TestFirstName TestLastName', 'Blutenburgstrasse18', '80636 München']",
+      "children" : [ {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "4b179c2da4babecf",
+        "parentUid" : "cf0f994bfd1d3997dbe37486460007a5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1665122124299,
+          "stop" : 1665122217831,
+          "duration" : 93532
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "b0bc393d46bacadc",
+        "parentUid" : "cf0f994bfd1d3997dbe37486460007a5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1665122218086,
+          "stop" : 1665122273229,
+          "duration" : 55143
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.Concardis\tPaymentMethod.DebitCard\tNone\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "6a084b2107c2502e",
+        "parentUid" : "cf0f994bfd1d3997dbe37486460007a5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1665122387782,
+          "stop" : 1665122439352,
+          "duration" : 51570
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.ThinxNet\tPaymentMethod.PostPayUser\tNone\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "d0576ef48075b177",
+        "parentUid" : "cf0f994bfd1d3997dbe37486460007a5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1665122439457,
+          "stop" : 1665122518394,
+          "duration" : 78937
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.MPGS\tPaymentMethod.CreditCard\tCreditCard:\tCreditCardBrand.Visa\tTEST CARD HOLDER\t4440000009900010\tSecureEnrolled.v2\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "3c19663f3a7aa09e",
+        "parentUid" : "cf0f994bfd1d3997dbe37486460007a5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1665122518522,
+          "stop" : 1665122589652,
+          "duration" : 71130
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.MPGS\tPaymentMethod.CreditCard\tCreditCard:\tCreditCardBrand.Visa\tTEST CARD HOLDER\t4508750015741019\tSecureEnrolled.v1\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "ae5451681fc57a1d",
+        "parentUid" : "cf0f994bfd1d3997dbe37486460007a5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1665122589767,
+          "stop" : 1665122682405,
+          "duration" : 92638
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.MPGS\tPaymentMethod.CreditCard\tCreditCard:\tCreditCardBrand.Mastercard\tTEST CARD HOLDER\t2223000000000007\tSecureEnrolled.v2\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "6417a068f1ad8a19",
+        "parentUid" : "cf0f994bfd1d3997dbe37486460007a5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1665122682571,
+          "stop" : 1665122755694,
+          "duration" : 73123
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.MPGS\tPaymentMethod.CreditCard\tCreditCard:\tCreditCardBrand.Mastercard\tTEST CARD HOLDER\t5506900140100305\tSecureEnrolled.v1\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "2192de221430c7db",
+        "parentUid" : "cf0f994bfd1d3997dbe37486460007a5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1665122755825,
+          "stop" : 1665122829819,
+          "duration" : 73994
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.MPGS\tPaymentMethod.CreditCard\tCreditCard:\tCreditCardBrand.Maestro\tTEST CARD HOLDER\t5000000000000000005\tSecureEnrolled.v2\tNone\tNone" ]
+      } ],
+      "uid" : "cf0f994bfd1d3997dbe37486460007a5"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}
