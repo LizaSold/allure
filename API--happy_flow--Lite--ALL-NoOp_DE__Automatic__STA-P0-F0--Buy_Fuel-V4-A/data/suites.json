@@ -1,0 +1,200 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "Tests.API.TT4.User.Lite.FuelPurchase.Automatic.v4",
+    "children" : [ {
+      "name" : "test__scenario__v4_fuel_purchase__generic",
+      "children" : [ {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "2b9dfc72e3adc001",
+        "parentUid" : "19e2be2a1790192d11b7b5e1bddc9ee3",
+        "status" : "failed",
+        "time" : {
+          "start" : 1667889643381,
+          "stop" : 1667889693745,
+          "duration" : 50364
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "e7d14f50541f0d68",
+        "parentUid" : "19e2be2a1790192d11b7b5e1bddc9ee3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1667889693922,
+          "stop" : 1667889764237,
+          "duration" : 70315
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.Concardis\tPaymentMethod.DebitCard\tNone\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "fde3de6a19c2cae3",
+        "parentUid" : "19e2be2a1790192d11b7b5e1bddc9ee3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1667889764303,
+          "stop" : 1667889805139,
+          "duration" : 40836
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.ThinxNet\tPaymentMethod.PostPayPartner\tNone\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "c94db7363263f5d6",
+        "parentUid" : "19e2be2a1790192d11b7b5e1bddc9ee3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1667889805194,
+          "stop" : 1667889849564,
+          "duration" : 44370
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.ThinxNet\tPaymentMethod.PostPayPartner\tNone\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "ac8097d2cfba032d",
+        "parentUid" : "19e2be2a1790192d11b7b5e1bddc9ee3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1667889849616,
+          "stop" : 1667889901321,
+          "duration" : 51705
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.ThinxNet\tPaymentMethod.PostPayUser\tNone\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "3b8e91e100046e18",
+        "parentUid" : "19e2be2a1790192d11b7b5e1bddc9ee3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1667889901382,
+          "stop" : 1667889981162,
+          "duration" : 79780
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.MPGS\tPaymentMethod.CreditCard\tCreditCard:\tCreditCardBrand.Visa\tTEST CARD HOLDER\t4440000009900010\tSecureEnrolled.v2\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "9344a18b44f65dd4",
+        "parentUid" : "19e2be2a1790192d11b7b5e1bddc9ee3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1667889981245,
+          "stop" : 1667890060673,
+          "duration" : 79428
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.MPGS\tPaymentMethod.CreditCard\tCreditCard:\tCreditCardBrand.Visa\tTEST CARD HOLDER\t4508750015741019\tSecureEnrolled.v1\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "cbdf54e2aa75075a",
+        "parentUid" : "19e2be2a1790192d11b7b5e1bddc9ee3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1667890060758,
+          "stop" : 1667890165379,
+          "duration" : 104621
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.MPGS\tPaymentMethod.CreditCard\tCreditCard:\tCreditCardBrand.Mastercard\tTEST CARD HOLDER\t2223000000000007\tSecureEnrolled.v2\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "30164d92aa7c3f7d",
+        "parentUid" : "19e2be2a1790192d11b7b5e1bddc9ee3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1667890165450,
+          "stop" : 1667890245143,
+          "duration" : 79693
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.MPGS\tPaymentMethod.CreditCard\tCreditCard:\tCreditCardBrand.Mastercard\tTEST CARD HOLDER\t5506900140100305\tSecureEnrolled.v1\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "4dbf4ec3408c4582",
+        "parentUid" : "19e2be2a1790192d11b7b5e1bddc9ee3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1667890245229,
+          "stop" : 1667890322437,
+          "duration" : 77208
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.MPGS\tPaymentMethod.CreditCard\tCreditCard:\tCreditCardBrand.Maestro\tTEST CARD HOLDER\t5000000000000000005\tSecureEnrolled.v2\tNone\tNone" ]
+      }, {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "6dd62927c5b1c9e6",
+        "parentUid" : "19e2be2a1790192d11b7b5e1bddc9ee3",
+        "status" : "skipped",
+        "time" : {
+          "start" : 1667890322521,
+          "stop" : 1667890330630,
+          "duration" : 8109
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.SIBS\tPaymentMethod.MB_WAY\tNone\tMBWayMobile.Num_1\tNone" ]
+      } ],
+      "uid" : "19e2be2a1790192d11b7b5e1bddc9ee3"
+    } ],
+    "uid" : "be491bb0ed1b3556a2eb7b8f383cbcc7"
+  } ],
+  "name" : "suites"
+}

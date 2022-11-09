@@ -1,0 +1,30 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: Checking if the amount of PSP Feature Configs > '0'\nThe amount of PaymentServiceProvider FeatureConfigurations is not bigger than 0!",
+      "children" : [ {
+        "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+        "uid" : "2b9dfc72e3adc001",
+        "parentUid" : "37d6a4a2049aa400a72cb14bcc880dd7",
+        "status" : "failed",
+        "time" : {
+          "start" : 1667889643381,
+          "stop" : 1667889693745,
+          "duration" : 50364
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "newPassed" : false,
+        "newBroken" : false,
+        "retriesCount" : 0,
+        "retriesStatusChange" : false,
+        "parameters" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone" ]
+      } ],
+      "uid" : "37d6a4a2049aa400a72cb14bcc880dd7"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}

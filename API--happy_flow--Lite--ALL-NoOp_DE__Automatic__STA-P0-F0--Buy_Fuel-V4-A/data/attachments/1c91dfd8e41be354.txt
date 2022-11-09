@@ -1,0 +1,3 @@
+  0%|          | 0/90 [00:00<?, ?it/s]  0%|          | 0/90 [00:05<?, ?it/s]
+polling for updated event EventType.Fuel_top_up:   0%|          | 0/36 [00:00<?, ?it/s]polling for updated event EventType.Fuel_top_up:   0%|          | 0/36 [00:10<?, ?it/s]
+polling for updated event EventType.Payment:   0%|          | 0/36 [00:00<?, ?it/s]polling for updated event EventType.Payment:   0%|          | 0/36 [00:10<?, ?it/s]

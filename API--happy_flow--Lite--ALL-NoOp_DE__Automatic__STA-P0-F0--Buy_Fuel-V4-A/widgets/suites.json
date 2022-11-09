@@ -1,0 +1,15 @@
+{
+  "total" : 1,
+  "items" : [ {
+    "uid" : "be491bb0ed1b3556a2eb7b8f383cbcc7",
+    "name" : "Tests.API.TT4.User.Lite.FuelPurchase.Automatic.v4",
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 1,
+      "passed" : 9,
+      "unknown" : 0,
+      "total" : 11
+    }
+  } ]
+}

@@ -1,0 +1,1803 @@
+{
+  "uid" : "2b9dfc72e3adc001",
+  "name" : "SCENARIO: Buy Fuel V4 Prepaid",
+  "fullName" : "Tests.API.TT4.User.Lite.FuelPurchase.Automatic.v4.test__scenario__v4_fuel_purchase__generic#test__scenario__scan__v4_lite_buy_fuel",
+  "historyId" : "54764e3316747c6da39019373a4ab275",
+  "time" : {
+    "start" : 1667889643381,
+    "stop" : 1667889693745,
+    "duration" : 50364
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: Checking if the amount of PSP Feature Configs > '0'\nThe amount of PaymentServiceProvider FeatureConfigurations is not bigger than 0!",
+  "statusTrace" : "log = <RPLogger Tests.conftest (INFO)>\nteardown__graylog_links = <SubRequest 'teardown__graylog_links' for <Function test__scenario__scan__v4_lite_buy_fuel[BP]>>\nteardown__archive_user = <SubRequest 'teardown__archive_user' for <Function test__scenario__scan__v4_lite_buy_fuel[BP]>>\nmark_xfail = <SubRequest 'mark_xfail' for <Function test__scenario__scan__v4_lite_buy_fuel[BP]>>\nheadless = True, environment = STA, iteration_steps = 90\niteration_step_interval = 5\npayment_setup = Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\npayment_setup_new = None, country = Germany, locale = German\nuser_number = '11081', gas_station = NoOp_DE__Automatic__STA, pump_number = P0\nfuel_number = F0, settle_mode = Equal, expected_pump_behavior = PumpFree\njenkins_checks = True, service_health_checks = True\naccount_history_checks = True, sso = False, kafka_checks = False, user = None\n\n    @allure.title(\"SCENARIO: Buy Fuel V4 Prepaid\")\n    @pytest.mark.payment_method_chain\n    @pytest.mark.test_scenario\n    @pytest.mark.generic\n    @pytest.mark.l3\n    @pytest.mark.flow_v4\n    @pytest.mark.order_automatic\n    @pytest.mark.buy_fuel\n    @pytest.mark.user_lite\n    @pytest.mark.station_generic\n    @pytest.mark.station_chain__NoOp\n    @pytest.mark.station_chain__BiCA\n    @pytest.mark.station_chain__Bungalski\n    @pytest.mark.station_chain__Gasodata\n    @pytest.mark.station_chain__Hectronic\n    @pytest.mark.station_chain__Phoenix\n    @pytest.mark.station_chain__Ratio\n    @pytest.mark.station_chain__Tokheim\n    @pytest.mark.station_chain__S_and_B\n    @pytest.mark.settle_mode_generic\n    @pytest.mark.country__AT\n    @pytest.mark.country__BE\n    @pytest.mark.country__CH\n    @pytest.mark.country__DE\n    @pytest.mark.country__DK\n    @pytest.mark.country__ES\n    @pytest.mark.country__LI\n    @pytest.mark.country__LU\n    @pytest.mark.country__NL\n    @pytest.mark.country__PT\n    @pytest.mark.country__PL\n    @pytest.mark.parametrize(\n        \"payment_setup, mark_xfail\",\n        # \"payment_setup\",\n        [pytest.param(\n            param_tuple[1], \"\",\n            # param_tuple[1],\n            id=f\"{param_tuple[0]}-XF\",\n            marks=pytest.mark.xfail\n        )\n         if buy_fuel_xfail_condition(param_tuple[1], FuelPurchaseFlowVersion.V4)\n         else pytest.param(\n            param_tuple[1], \"No fail expected\",\n            # param_tuple[1],\n            id=f\"{param_tuple[0]}\",\n        )\n         for param_tuple in parameter_list],\n        indirect=['mark_xfail']\n    )\n    def test__scenario__scan__v4_lite_buy_fuel(\n        log,\n        teardown__graylog_links,\n        teardown__archive_user,\n        mark_xfail,\n        headless: bool,\n        environment: Env,\n        iteration_steps: int,\n        iteration_step_interval: int,\n        payment_setup: PaymentSetup,\n        payment_setup_new: Optional[PaymentSetup],\n        country: Country,\n        locale: Locale,\n        user_number: str,\n        gas_station: GasStation,\n        pump_number: PumpNumber,\n        fuel_number: FuelNumber,\n        settle_mode: TransactionSettleMode,\n        expected_pump_behavior: ExpectedBehavior,\n        jenkins_checks: bool,\n        service_health_checks: bool,\n        account_history_checks: bool,\n        sso: bool,\n        kafka_checks: bool,\n        user: Optional[User] = None\n    ):\n>       result, user = test__scenario__buy_fuel__v4_lite_generic(\n            log=log,\n            mark_xfail=mark_xfail,\n            teardown__graylog_links=teardown__graylog_links,\n            teardown__archive_user=teardown__archive_user,\n            headless=headless,\n            environment=environment,\n            iteration_steps=iteration_steps,\n            iteration_step_interval=iteration_step_interval,\n            country=country, locale=locale,\n            user_number=user_number,\n            payment_setup=payment_setup,\n            payment_setup_new=payment_setup_new,\n            gas_station=gas_station, pump_number=pump_number, fuel_number=fuel_number,\n            settle_mode=settle_mode, expected_pump_behavior=expected_pump_behavior,\n            account_history_checks=account_history_checks,\n            jenkins_checks=jenkins_checks, service_health_checks=service_health_checks,\n            sso=sso,\n            user=user,\n            kafka_checks=kafka_checks,\n        )\n\nTests/API/TT4/User/Lite/FuelPurchase/Automatic/v4/test__scenario__v4_fuel_purchase__generic.py:455: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nTests/API/TT4/User/Lite/FuelPurchase/Automatic/v4/test__scenario__v4_fuel_purchase__generic.py:327: in test__scenario__buy_fuel__v4_lite_generic\n    result, user = test__case__subscribe_to_psp(\nTests/API/TT4/User/Lite/PSP/case/test__case__subscribe.py:196: in test__case__subscribe_to_psp\n    assert user.worker_user_api.check__is_user_payment_method_configured_and_activated(\nWorkers/API/User.py:903: in check__is_user_payment_method_configured_and_activated\n    is_it_working = self.assert_or_check(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <Workers.API.User.UserAPIWorker object at 0x7f855ab2c9d0>\ncondition = False\nerror_message = 'The amount of PaymentServiceProvider FeatureConfigurations is not bigger than 0!'\nhard_assert = True\nerror_list = [\"Checking if the amount of PSP Feature Configs > '0'\\nThe amount of PaymentServiceProvider FeatureConfigurations is not bigger than 0!\"]\nstore_errors = True, log_errors_from_list = False\ncheck_message = \"Checking if the amount of PSP Feature Configs > '0'\"\nverbose = True\n\n    def assert_or_check(\n        self,\n        condition: bool,\n        error_message: str,\n        hard_assert: bool = True,\n        error_list: list = None,\n        store_errors: bool = True,\n        log_errors_from_list: bool = False,\n        check_message: Optional[str] = None,\n        verbose: bool = True\n    ) -> bool:\n        if error_list is None:\n            error_list = self.error_list\n        assert hard_assert is True or error_list is not None, \\\n            f\"TEST ERROR: If the hard_assert is False - please provide an error_list to collect errors.\"\n    \n        # NO FAILURE\n        if condition:\n            if check_message is not None:\n                if verbose:\n                    log.info(f\"{check_message} - PASSED\")\n                else:\n                    log.debug(f\"{check_message} - PASSED\")\n    \n            # return overall result\n            return True\n        # FAILURE\n        else:\n            # Prepare the final message to contain the error list contents if requested\n            if error_list is not None and len(error_list) > 0 and log_errors_from_list:\n                error_message += \"\\n\"\n                for item_no, error in enumerate(error_list):\n                    error_message += f\"\\nError[{item_no}]: {error}\\n\"\n    \n            # Build the initial message - depending on provided check/error messages\n            if check_message is None:\n                final_message = error_message\n            else:\n                final_message = f\"{check_message}\\n{error_message}\"\n    \n            # Present the final message\n            if not store_errors:\n                # indicate WARNING only\n                log.warning(final_message)\n            else:\n                # indicate ERROR\n                log.error(final_message)\n    \n            # Handle the behavior regarding raising and storing errors\n            if hard_assert:\n>               raise AssertionError(final_message)\nE               AssertionError: Checking if the amount of PSP Feature Configs > '0'\nE               The amount of PaymentServiceProvider FeatureConfigurations is not bigger than 0!\n\nWorkers/Generic.py:145: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "log",
+    "time" : {
+      "start" : 1667889643355,
+      "stop" : 1667889643355,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "teardown__archive_user",
+    "time" : {
+      "start" : 1667889643356,
+      "stop" : 1667889643378,
+      "duration" : 22
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "teardown__graylog_links",
+    "time" : {
+      "start" : 1667889643356,
+      "stop" : 1667889643356,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "sso",
+    "time" : {
+      "start" : 1667889643356,
+      "stop" : 1667889643356,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "headless",
+    "time" : {
+      "start" : 1667889643379,
+      "stop" : 1667889643379,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "environment",
+    "time" : {
+      "start" : 1667889643379,
+      "stop" : 1667889643379,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "payment_setup_new",
+    "time" : {
+      "start" : 1667889643379,
+      "stop" : 1667889643379,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "mark_xfail",
+    "time" : {
+      "start" : 1667889643379,
+      "stop" : 1667889643379,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "iteration_step_interval",
+    "time" : {
+      "start" : 1667889643379,
+      "stop" : 1667889643379,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "country",
+    "time" : {
+      "start" : 1667889643379,
+      "stop" : 1667889643379,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "iteration_steps",
+    "time" : {
+      "start" : 1667889643379,
+      "stop" : 1667889643379,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "locale",
+    "time" : {
+      "start" : 1667889643379,
+      "stop" : 1667889643380,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "pump_number",
+    "time" : {
+      "start" : 1667889643380,
+      "stop" : 1667889643380,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "gas_station",
+    "time" : {
+      "start" : 1667889643380,
+      "stop" : 1667889643380,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "settle_mode",
+    "time" : {
+      "start" : 1667889643380,
+      "stop" : 1667889643380,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "service_health_checks",
+    "time" : {
+      "start" : 1667889643380,
+      "stop" : 1667889643380,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "fuel_number",
+    "time" : {
+      "start" : 1667889643380,
+      "stop" : 1667889643380,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "user_number",
+    "time" : {
+      "start" : 1667889643380,
+      "stop" : 1667889643380,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "jenkins_checks",
+    "time" : {
+      "start" : 1667889643380,
+      "stop" : 1667889643380,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "expected_pump_behavior",
+    "time" : {
+      "start" : 1667889643380,
+      "stop" : 1667889643380,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "user_num",
+    "time" : {
+      "start" : 1667889643380,
+      "stop" : 1667889643380,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "kafka_checks",
+    "time" : {
+      "start" : 1667889643381,
+      "stop" : 1667889643381,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "account_history_checks",
+    "time" : {
+      "start" : 1667889643381,
+      "stop" : 1667889643381,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: Checking if the amount of PSP Feature Configs > '0'\nThe amount of PaymentServiceProvider FeatureConfigurations is not bigger than 0!",
+    "statusTrace" : "log = <RPLogger Tests.conftest (INFO)>\nteardown__graylog_links = <SubRequest 'teardown__graylog_links' for <Function test__scenario__scan__v4_lite_buy_fuel[BP]>>\nteardown__archive_user = <SubRequest 'teardown__archive_user' for <Function test__scenario__scan__v4_lite_buy_fuel[BP]>>\nmark_xfail = <SubRequest 'mark_xfail' for <Function test__scenario__scan__v4_lite_buy_fuel[BP]>>\nheadless = True, environment = STA, iteration_steps = 90\niteration_step_interval = 5\npayment_setup = Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\npayment_setup_new = None, country = Germany, locale = German\nuser_number = '11081', gas_station = NoOp_DE__Automatic__STA, pump_number = P0\nfuel_number = F0, settle_mode = Equal, expected_pump_behavior = PumpFree\njenkins_checks = True, service_health_checks = True\naccount_history_checks = True, sso = False, kafka_checks = False, user = None\n\n    @allure.title(\"SCENARIO: Buy Fuel V4 Prepaid\")\n    @pytest.mark.payment_method_chain\n    @pytest.mark.test_scenario\n    @pytest.mark.generic\n    @pytest.mark.l3\n    @pytest.mark.flow_v4\n    @pytest.mark.order_automatic\n    @pytest.mark.buy_fuel\n    @pytest.mark.user_lite\n    @pytest.mark.station_generic\n    @pytest.mark.station_chain__NoOp\n    @pytest.mark.station_chain__BiCA\n    @pytest.mark.station_chain__Bungalski\n    @pytest.mark.station_chain__Gasodata\n    @pytest.mark.station_chain__Hectronic\n    @pytest.mark.station_chain__Phoenix\n    @pytest.mark.station_chain__Ratio\n    @pytest.mark.station_chain__Tokheim\n    @pytest.mark.station_chain__S_and_B\n    @pytest.mark.settle_mode_generic\n    @pytest.mark.country__AT\n    @pytest.mark.country__BE\n    @pytest.mark.country__CH\n    @pytest.mark.country__DE\n    @pytest.mark.country__DK\n    @pytest.mark.country__ES\n    @pytest.mark.country__LI\n    @pytest.mark.country__LU\n    @pytest.mark.country__NL\n    @pytest.mark.country__PT\n    @pytest.mark.country__PL\n    @pytest.mark.parametrize(\n        \"payment_setup, mark_xfail\",\n        # \"payment_setup\",\n        [pytest.param(\n            param_tuple[1], \"\",\n            # param_tuple[1],\n            id=f\"{param_tuple[0]}-XF\",\n            marks=pytest.mark.xfail\n        )\n         if buy_fuel_xfail_condition(param_tuple[1], FuelPurchaseFlowVersion.V4)\n         else pytest.param(\n            param_tuple[1], \"No fail expected\",\n            # param_tuple[1],\n            id=f\"{param_tuple[0]}\",\n        )\n         for param_tuple in parameter_list],\n        indirect=['mark_xfail']\n    )\n    def test__scenario__scan__v4_lite_buy_fuel(\n        log,\n        teardown__graylog_links,\n        teardown__archive_user,\n        mark_xfail,\n        headless: bool,\n        environment: Env,\n        iteration_steps: int,\n        iteration_step_interval: int,\n        payment_setup: PaymentSetup,\n        payment_setup_new: Optional[PaymentSetup],\n        country: Country,\n        locale: Locale,\n        user_number: str,\n        gas_station: GasStation,\n        pump_number: PumpNumber,\n        fuel_number: FuelNumber,\n        settle_mode: TransactionSettleMode,\n        expected_pump_behavior: ExpectedBehavior,\n        jenkins_checks: bool,\n        service_health_checks: bool,\n        account_history_checks: bool,\n        sso: bool,\n        kafka_checks: bool,\n        user: Optional[User] = None\n    ):\n>       result, user = test__scenario__buy_fuel__v4_lite_generic(\n            log=log,\n            mark_xfail=mark_xfail,\n            teardown__graylog_links=teardown__graylog_links,\n            teardown__archive_user=teardown__archive_user,\n            headless=headless,\n            environment=environment,\n            iteration_steps=iteration_steps,\n            iteration_step_interval=iteration_step_interval,\n            country=country, locale=locale,\n            user_number=user_number,\n            payment_setup=payment_setup,\n            payment_setup_new=payment_setup_new,\n            gas_station=gas_station, pump_number=pump_number, fuel_number=fuel_number,\n            settle_mode=settle_mode, expected_pump_behavior=expected_pump_behavior,\n            account_history_checks=account_history_checks,\n            jenkins_checks=jenkins_checks, service_health_checks=service_health_checks,\n            sso=sso,\n            user=user,\n            kafka_checks=kafka_checks,\n        )\n\nTests/API/TT4/User/Lite/FuelPurchase/Automatic/v4/test__scenario__v4_fuel_purchase__generic.py:455: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \nTests/API/TT4/User/Lite/FuelPurchase/Automatic/v4/test__scenario__v4_fuel_purchase__generic.py:327: in test__scenario__buy_fuel__v4_lite_generic\n    result, user = test__case__subscribe_to_psp(\nTests/API/TT4/User/Lite/PSP/case/test__case__subscribe.py:196: in test__case__subscribe_to_psp\n    assert user.worker_user_api.check__is_user_payment_method_configured_and_activated(\nWorkers/API/User.py:903: in check__is_user_payment_method_configured_and_activated\n    is_it_working = self.assert_or_check(\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <Workers.API.User.UserAPIWorker object at 0x7f855ab2c9d0>\ncondition = False\nerror_message = 'The amount of PaymentServiceProvider FeatureConfigurations is not bigger than 0!'\nhard_assert = True\nerror_list = [\"Checking if the amount of PSP Feature Configs > '0'\\nThe amount of PaymentServiceProvider FeatureConfigurations is not bigger than 0!\"]\nstore_errors = True, log_errors_from_list = False\ncheck_message = \"Checking if the amount of PSP Feature Configs > '0'\"\nverbose = True\n\n    def assert_or_check(\n        self,\n        condition: bool,\n        error_message: str,\n        hard_assert: bool = True,\n        error_list: list = None,\n        store_errors: bool = True,\n        log_errors_from_list: bool = False,\n        check_message: Optional[str] = None,\n        verbose: bool = True\n    ) -> bool:\n        if error_list is None:\n            error_list = self.error_list\n        assert hard_assert is True or error_list is not None, \\\n            f\"TEST ERROR: If the hard_assert is False - please provide an error_list to collect errors.\"\n    \n        # NO FAILURE\n        if condition:\n            if check_message is not None:\n                if verbose:\n                    log.info(f\"{check_message} - PASSED\")\n                else:\n                    log.debug(f\"{check_message} - PASSED\")\n    \n            # return overall result\n            return True\n        # FAILURE\n        else:\n            # Prepare the final message to contain the error list contents if requested\n            if error_list is not None and len(error_list) > 0 and log_errors_from_list:\n                error_message += \"\\n\"\n                for item_no, error in enumerate(error_list):\n                    error_message += f\"\\nError[{item_no}]: {error}\\n\"\n    \n            # Build the initial message - depending on provided check/error messages\n            if check_message is None:\n                final_message = error_message\n            else:\n                final_message = f\"{check_message}\\n{error_message}\"\n    \n            # Present the final message\n            if not store_errors:\n                # indicate WARNING only\n                log.warning(final_message)\n            else:\n                # indicate ERROR\n                log.error(final_message)\n    \n            # Handle the behavior regarding raising and storing errors\n            if hard_assert:\n>               raise AssertionError(final_message)\nE               AssertionError: Checking if the amount of PSP Feature Configs > '0'\nE               The amount of PaymentServiceProvider FeatureConfigurations is not bigger than 0!\n\nWorkers/Generic.py:145: AssertionError",
+    "steps" : [ {
+      "name" : "TEST: Create market configuration",
+      "time" : {
+        "start" : 1667889643823,
+        "stop" : 1667889648098,
+        "duration" : 4275
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "get country related feature and sponsor configurations",
+        "time" : {
+          "start" : 1667889643845,
+          "stop" : 1667889644382,
+          "duration" : 537
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "worker_sf",
+          "value" : "<Workers.API.SalesForce.SalesForce.SalesForceAPIWorker object at 0x7f8561a4aa10>"
+        }, {
+          "name" : "country",
+          "value" : "Germany"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "get country related feature and sponsor configurations",
+        "time" : {
+          "start" : 1667889644382,
+          "stop" : 1667889644874,
+          "duration" : 492
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "worker_sf",
+          "value" : "<Workers.API.SalesForce.SalesForce.SalesForceAPIWorker object at 0x7f8561a4aa10>"
+        }, {
+          "name" : "country",
+          "value" : "Germany"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "log",
+        "value" : "<RPLogger Tests.conftest (INFO)>"
+      }, {
+        "name" : "teardown__graylog_links",
+        "value" : "<SubRequest 'teardown__graylog_links' for <Function test__scenario__scan__v4_lite_buy_fuel[BP]>>"
+      }, {
+        "name" : "environment",
+        "value" : "STA"
+      }, {
+        "name" : "jenkins_checks",
+        "value" : "False"
+      }, {
+        "name" : "country",
+        "value" : "Germany"
+      }, {
+        "name" : "test_id",
+        "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+      } ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "TEST: Create lite user",
+      "time" : {
+        "start" : 1667889648098,
+        "stop" : 1667889655386,
+        "duration" : 7288
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "User Worker: Flow: Create account if it does not exist",
+        "time" : {
+          "start" : 1667889648114,
+          "stop" : 1667889655119,
+          "duration" : 7005
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "User Worker: Log in to account",
+          "time" : {
+            "start" : 1667889648115,
+            "stop" : 1667889648227,
+            "duration" : 112
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "Request TT4: log in to account",
+            "time" : {
+              "start" : 1667889648116,
+              "stop" : 1667889648226,
+              "duration" : 110
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ ],
+            "parameters" : [ {
+              "name" : "env",
+              "value" : "STA"
+            }, {
+              "name" : "email",
+              "value" : "'txn.test+-S-DEL4-BP_-11081@thinxnet.com'"
+            }, {
+              "name" : "password",
+              "value" : "'Test1234'"
+            }, {
+              "name" : "test_id",
+              "value" : "None"
+            } ],
+            "stepsCount" : 0,
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "hasContent" : true
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "user",
+            "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-S-DEL4-BP_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      None\taccounts: None\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.CreatedPasswordChanged\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: None\tcurrency: None\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+          }, {
+            "name" : "password",
+            "value" : "None"
+          }, {
+            "name" : "hard_assert",
+            "value" : "False"
+          }, {
+            "name" : "test_id",
+            "value" : "None"
+          } ],
+          "stepsCount" : 1,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        }, {
+          "name" : "User Worker: Flow: Create account, change password, login",
+          "time" : {
+            "start" : 1667889648232,
+            "stop" : 1667889655119,
+            "duration" : 6887
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "User Worker: Create account",
+            "time" : {
+              "start" : 1667889648232,
+              "stop" : 1667889650507,
+              "duration" : 2275
+            },
+            "status" : "passed",
+            "steps" : [ {
+              "name" : "Request TT4: Register account",
+              "time" : {
+                "start" : 1667889648235,
+                "stop" : 1667889650339,
+                "duration" : 2104
+              },
+              "status" : "passed",
+              "steps" : [ ],
+              "attachments" : [ ],
+              "parameters" : [ {
+                "name" : "env",
+                "value" : "STA"
+              }, {
+                "name" : "email",
+                "value" : "'txn.test+-S-DEL4-BP_-11081@thinxnet.com'"
+              }, {
+                "name" : "first_name",
+                "value" : "'TestFirstName'"
+              }, {
+                "name" : "referrer",
+                "value" : "'Test'"
+              }, {
+                "name" : "country_code",
+                "value" : "Germany"
+              }, {
+                "name" : "locale_code",
+                "value" : "German"
+              }, {
+                "name" : "test_id",
+                "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+              } ],
+              "stepsCount" : 0,
+              "attachmentsCount" : 0,
+              "shouldDisplayMessage" : false,
+              "hasContent" : true
+            } ],
+            "attachments" : [ ],
+            "parameters" : [ {
+              "name" : "user",
+              "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-S-DEL4-BP_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      None\taccounts: None\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.CreatedPasswordChanged\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: None\tcurrency: None\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+            }, {
+              "name" : "id_token",
+              "value" : "None"
+            }, {
+              "name" : "id_provider",
+              "value" : "None"
+            }, {
+              "name" : "test_id",
+              "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+            } ],
+            "stepsCount" : 1,
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "hasContent" : true
+          }, {
+            "name" : "User Worker: Change password",
+            "time" : {
+              "start" : 1667889650508,
+              "stop" : 1667889652077,
+              "duration" : 1569
+            },
+            "status" : "passed",
+            "steps" : [ {
+              "name" : "Request TT4: change password",
+              "time" : {
+                "start" : 1667889650512,
+                "stop" : 1667889652076,
+                "duration" : 1564
+              },
+              "status" : "passed",
+              "steps" : [ ],
+              "attachments" : [ ],
+              "parameters" : [ {
+                "name" : "env",
+                "value" : "STA"
+              }, {
+                "name" : "auth_token",
+                "value" : "'6c6821ac-de6a-4a45-8f9f-5f4b221c07b1'"
+              }, {
+                "name" : "new_password",
+                "value" : "'Test1234'"
+              }, {
+                "name" : "locale",
+                "value" : "German"
+              }, {
+                "name" : "test_id",
+                "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+              } ],
+              "stepsCount" : 0,
+              "attachmentsCount" : 0,
+              "shouldDisplayMessage" : false,
+              "hasContent" : true
+            } ],
+            "attachments" : [ ],
+            "parameters" : [ {
+              "name" : "user",
+              "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-S-DEL4-BP_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      None\taccounts: None\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.CreatedNotChangedPassword\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: None\tcurrency: None\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+            }, {
+              "name" : "new_password",
+              "value" : "None"
+            }, {
+              "name" : "test_id",
+              "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+            } ],
+            "stepsCount" : 1,
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "hasContent" : true
+          }, {
+            "name" : "User Worker: Log in to account",
+            "time" : {
+              "start" : 1667889652077,
+              "stop" : 1667889655119,
+              "duration" : 3042
+            },
+            "status" : "passed",
+            "steps" : [ {
+              "name" : "Request TT4: log in to account",
+              "time" : {
+                "start" : 1667889652078,
+                "stop" : 1667889655118,
+                "duration" : 3040
+              },
+              "status" : "passed",
+              "steps" : [ ],
+              "attachments" : [ ],
+              "parameters" : [ {
+                "name" : "env",
+                "value" : "STA"
+              }, {
+                "name" : "email",
+                "value" : "'txn.test+-S-DEL4-BP_-11081@thinxnet.com'"
+              }, {
+                "name" : "password",
+                "value" : "'Test1234'"
+              }, {
+                "name" : "test_id",
+                "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+              } ],
+              "stepsCount" : 0,
+              "attachmentsCount" : 0,
+              "shouldDisplayMessage" : false,
+              "hasContent" : true
+            } ],
+            "attachments" : [ ],
+            "parameters" : [ {
+              "name" : "user",
+              "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-S-DEL4-BP_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      None\taccounts: None\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.CreatedPasswordChanged\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: None\tcurrency: None\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+            }, {
+              "name" : "password",
+              "value" : "None"
+            }, {
+              "name" : "hard_assert",
+              "value" : "True"
+            }, {
+              "name" : "test_id",
+              "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+            } ],
+            "stepsCount" : 1,
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "hasContent" : true
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "user",
+            "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-S-DEL4-BP_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      None\taccounts: None\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.CreatedPasswordChanged\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: None\tcurrency: None\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+          }, {
+            "name" : "id_token",
+            "value" : "None"
+          }, {
+            "name" : "id_provider",
+            "value" : "None"
+          }, {
+            "name" : "test_id",
+            "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+          } ],
+          "stepsCount" : 6,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "user",
+          "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-S-DEL4-BP_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      None\taccounts: None\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.CreatedPasswordChanged\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: None\tcurrency: None\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+        }, {
+          "name" : "sso",
+          "value" : "False"
+        }, {
+          "name" : "test_id",
+          "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+        } ],
+        "stepsCount" : 9,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "User Worker: Get Car",
+        "time" : {
+          "start" : 1667889655119,
+          "stop" : 1667889655345,
+          "duration" : 226
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Request TT4: Get car by ID",
+          "time" : {
+            "start" : 1667889655132,
+            "stop" : 1667889655328,
+            "duration" : 196
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "env",
+            "value" : "STA"
+          }, {
+            "name" : "car_id",
+            "value" : "'6369f9f01e6a3beb4e04502c'"
+          }, {
+            "name" : "auth_token",
+            "value" : "'55ab553d-ee3f-4dc3-ac35-c378d6db541e'"
+          }, {
+            "name" : "locale",
+            "value" : "German"
+          }, {
+            "name" : "test_id",
+            "value" : "None"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        }, {
+          "name" : "DataStructures: Car: init",
+          "time" : {
+            "start" : 1667889655329,
+            "stop" : 1667889655331,
+            "duration" : 2
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "raw_car_response",
+            "value" : "{'_id': '6369f9f01e6a3beb4e04502c', 'account': '6369f9f01e6a3beb4e045029', 'type': 'CAR', 'device': {'_id': '6369f9f01e6a3beb4e04502b', 'id': '0943ab88-a9b6-47d2-83b2-5e54afe1ee38', 'sn': '0943ab88-a9b6-47d2-83b2-5e54afe1ee38', '__v': 0, 'firstPluginEmailSent': False, 'sendToKafkaStaging': False, 'activitiesCounter': 2, 'sendToKafka': False, 'vendor': 'THINXNET', 'type': 'MOBILE', 'thing': '6369f9f01e6a3beb4e04502c', 'subscriptionState': 'APP_ONLY', 'state': 'ACTIVE', 'scriptVersion': None, 'rawCarStatusMessage': None, 'pluggedIn': False, 'passAttempts': 0, 'pass': '', 'pairingState': 'PAIRED', 'obdDisabled': False, 'obdBusConflictCounter': 0, 'isTest': False, 'internalBatteryLow': False, 'imei': None, 'iccid': None, 'fwVersion': None, 'firstDongleEventPostPairing': False, 'firstDongleEventEver': False, 'dongleLoose': False, 'configType': 'RYDBOX', 'configVersion': None, 'account': '6369f9f01e6a3beb4e045029', 'VBUSFW': None, 'VBUSDB': None}, 'package': 'APP_ONLY', 'drivers': [], 'extensionCable': False, 'sponsors': [{'_id': '597858b314e70f074769f743', 'categoryName': 'TT_DEFAULT_THING', 'featurePackTag': 'TT_DEFAULT_THING', '__v': 25, 'isDefaultForCountries': ['DE'], 'target': 'THING', 'featureConfigurations': [{'_id': 'fuelBonus_DEFAULT', 'backgroundColor': '#FFFFFF', 'bodyTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', 'titleTextColor': '#08495D', 'title': 'Feature Title', '__v': 0, 'feature': 'fuelBonus', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '2.17', 'platform': None, 'DONGLE': {'overridePoiDefinedPoints': False, 'pointsPerLiterUnknownStation': 20, 'pointsPerLiterP4G': 20, 'pointsPerLiter': 20}, 'APP_ONLY': {'overridePoiDefinedPoints': False, 'pointsPerLiterUnknownStation': 20, 'pointsPerLiterP4G': 10, 'pointsPerLiter': 10}, 'id': 'fuelBonus_DEFAULT'}, {'_id': 'ttCampaigns_DEFAULT', 'backgroundColor': '#FFFFFF', 'bodyTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', '__v': 0, 'feature': 'ttCampaigns', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '2.17', 'platform': None, 'target': 'THING', 'title': 'Feature Title', 'titleBackgroundColor': '#FFFFFF', 'titleTextColor': '#08495D', 'id': 'ttCampaigns_DEFAULT'}, {'_id': 'contactCard_DEFAULT', 'urlImage1': 'https://img-1.thinxcloud.de/support.png', '__v': 26, 'urlLogo1': 'https://img-1.thinxcloud.de/tanktaler.png', 'feature': 'contactCard', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://axa.ch/etc/clientlibs/axa/frontend-lib/images/logo-AXA.svg', 'minAppVersion': '2.16', 'platform': None, 'logoUrl': None, 'urlTermsOfUse': 'https://links.tt.nf/terms', 'titleTextColor': '#08495D', 'titleBackgroundColor': '#FFFFFF', 'phone': '+49 89 452066321', 'infoText': None, 'email': 'hilfe@tanktaler.de', 'categoryName': None, 'bodyTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', 'textColor': '#08495D', 'backgroundColor': '#FFFFFF', 'address': 'therwilHauptagentur, Gerardo Castellano, Oberwilerstrasse 73, 4106 Therwil', 'urlImage': 'https://axa.ch/content/dam/axa/agents/therwil.jpg/_jcr_content/renditions/original', 'title': 'TankTaler ist für Dich da', 'text': 'Das ist die <bold>erste</bold> Zeile<br>und das die zweite', 'name': 'Unsere Kontaktdaten', 'links': [{'type': 'PHONE', 'text': '+49 89 452066321'}, {'type': 'WEB', 'text': 'https://de.ryd.one'}, {'type': 'ADDRESS', 'text': 'München'}, {'type': 'EMAIL', 'text': 'hilfe@tanktaler.de'}], 'id': 'contactCard_DEFAULT'}, {'_id': 'fastLane_DEFAULT', 'backgroundColor': '#FFFFFF', 'bodyTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', 'titleTextColor': '#08495D', 'title': 'Feature Title', '__v': 0, 'feature': 'fastLane', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '2.17', 'platform': None, 'accountGroupId': None, 'id': 'fastLane_DEFAULT'}, {'_id': 'sml_DEFAULT', 'backgroundColor': '#08495D', 'bodyTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', 'titleTextColor': '#08495D', 'title': 'Feature Title', '__v': 0, 'feature': 'sml', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '2.19', 'platform': None, 'sharingText': None, 'target': 'THING', 'id': 'sml_DEFAULT'}, {'_id': 'ecoScore_DEFAULT', 'tripEndPushDeeplink': '#eventlog', 'tripEndPushTextPrefix': None, '__v': 0, 'feature': 'ecoScore', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'platform': None, 'urlTermsOfUse': 'https://links.tt.nf/terms', 'tripEndPushTextSnippet': 'EcoScore: ${ecoScore}', 'trafficFactor': 0, 'titleTextColor': '#08495D', 'titleBackgroundColor': '#FFFFFF', 'title': 'Feature Title', 'speedFactor': 1, 'name': 'es_v1.0', 'minPointsGranted': 0, 'minDistanceM': 1000, 'minAppVersion': '2.22', 'maxPointsGranted': 0, 'infoText': None, 'headline': 'ThinxNet EcoScore', 'distanceFactor': 1, 'brakingFactor': 0.8, 'bodyTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', 'backgroundColor': '#FFFFFF', 'accelerationFactor': 1.2, 'id': 'ecoScore_DEFAULT'}, {'_id': 'accidentReport_DEFAULT', '__v': 0, 'feature': 'accidentReport', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'platform': None, 'accidentReportWebapp': {'backgroundColor': '#FFFFFF', 'urlLogo': None, 'consentBody': None, 'consentTitle': None}, 'title': 'Schadenmeldung', 'titleBackgroundColor': '#FFFFFF', 'titleTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', 'bodyTextColor': '#08495D', 'backgroundColor': '#FFFFFF', 'recipientEmailAddress': 'christoph.federwisch+ARSTAGING@thinxnet.com', 'minAppVersion': '2.22', 'mandrillTemplateName': 'BE_ACCIDENT_REPORT_DEFAULT_DE', 'infoText': 'Neuer Infotext (brandneu: jetzt editierbar)', 'emailSubject': 'Schadenmeldung', 'buttonUrl': 'https://damage-report-staging.ryd.one?firstName=[<user.firstName>]&lastName=[<user.lastName>]&email=[<user.email>]&licensePlate=[<thing.status.licensePlate>]&token=[<token>]', 'buttonTextColor': '#FFFFFF', 'buttonColor': '#08495D ', 'body': 'Du kannst hier direkt einen Schaden zur Abwicklung melden.', 'id': 'accidentReport_DEFAULT'}, {'_id': 'eCall_DEFAULT', 'serviceProvider': 'TXN', 'providerConfiguration': 'TXN_IMA_eCall', 'optIn': {'name': 'IMAagb2', 'privacyButtons': [], 'text': '', 'title': ''}, 'privacyAgreement': {'name': 'newAgb1', 'privacyButtons': [], 'text': '', 'title': ''}, 'feature': 'eCall', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '', 'platform': None, 'requiredPackage': 'PREMIUM', 'passiveECallNotification': {'infoText': 'Hilfe benötigt?', 'smsText': 'Es wurde eine Erschütterung an Deinem Fahrzeug festgestellt. Ist alles in Ordnung bei Dir? Solltest Du Hilfe benötigen, dann ruf den Schadenservice an: +49 089 4520 66321', 'helpPhoneNumber': '+49 089 4520 66321', 'helpLink': 'https://damage-report.ryd.one/', '_id': '6369f9f76445b4ebfc39beaf', 'homeCountryCodes': ['DE']}, 'setupDongleMount': {'checkBoxText': 'Ich versichere, dass meine ryd box fest steckt oder fixiert ist.', 'text': 'Stelle sicher, dass Deine ryd box fest eingesteckt ist.\\n\\nFalls Du ein Verlängerungskabel nutzt, muss die Box in einer Halterung oder mit anderen Mitteln fixiert werden. Sie darf nicht frei beweglich sein.'}, 'setupPrivacyPolicy': {'checkBoxText': 'Ich habe die Nutzungsbedingungen für den Automatischen Notruf gelesen und stimme ihnen zu.', 'text': 'Damit Du rund um die Uhr so schnell wie möglich gerettet wirst, werden die von Dir angegebenen Informationen zu Deiner Person, Deinem Fahrzeug und Standortinformationen zum Unfallort und Deiner Fahrtrichtung von einer beauftragten Notrufzentrale verarbeitet.\\n\\nDie Datenübermittlung an die Notrufzentrale findet ausschließlich in folgenden Fällen statt: automatischer Unfall erkannt, manueller Notruf ausgelöst, manueller Pannenruf ausgelöst. Die Daten werden verschlüsselt übermittelt. Die Notrufzentrale kann Deine Daten nur zur Schadenabwicklung verwenden.\\n\\nWeitere Informationen findest Du in den Nutzungsbedingungen.'}, 'setupIntroduction': {'text': 'Bitte prüfe und ergänze auf den nächsten Seiten Deine Daten, damit wir die Notruf-Funktionen für dein Fahrzeug aktivieren können.', 'title': 'Automatischer Notruf aktivieren für dein Fahrzeug'}, 'disabledText': 'Automatischer Notruf ist nicht aktiv. Bei einem Unfall kommt keine Hilfe.', 'enabledText': '\\tAutomatischer Notruf ist aktiv für Dein Auto. Bei einem Unfall wird automatisch Hilfe gerufen.', 'urlTermsOfUse': 'https://tt-wordpress.thinxnet.com/automatischernotrufagb', 'bodyTextTextColor': '#08495D', 'bodyTextBackgroundColor': '#FFFFFF', 'bodyText': None, 'titleTextColor': '#08495D', 'titleBackgroundColor': '#FFFFFF', 'title': 'I changed the title to be recognisable', 'signUpName': 'Notruf aktivieren', 'insuranceId': 'AXA', 'infoText': 'Wir messen mit Deinem TankTaler Stecker starke Geschwindigkeits- und Richtungsänderungen. Wenn gewisse Werte überstiegen werden – beispielsweise wenn Dein Auto in wenigen Sekunden von 150 km/h auf 0 km/h abbremst und danach nicht weiterfährt – interpretiert der Stecker das als Unfall und löst automatisch einen Notruf aus.<p>Dabei werden die von Dir angegebenen Informationen zu Deiner Person, Telefonnummer, Deinem Fahrzeug und Standortinformationen zum Unfallort und Deiner Fahrtrichtung über eine verschlüsselte Verbindung an eine beauftragte Notrufzentrale übermittelt. Mit diesen Daten kann die Notrufzentrale Rettungsdienste oder Pannenhilfe wesentlich besser informieren und lotsen. Damit ist im Ernstfall schneller Hilfe bei Dir, die schon weiß, was sie am Unfallort erwartet.</p><p>Der Service funktioniert in Deutschland.</p><p>Weitere Informationen findest Du in den <a href=\"https://tt-wordpress.thinxnet.com/automatischernotrufagb\">Nutzungsbedingungen</a>.</p>', 'id': 'eCall_DEFAULT'}, {'_id': 'mCall_DEFAULT', 'serviceProvider': 'TXN', 'providerConfiguration': 'TXN_TXN_mCall', 'feature': 'mCall', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '', 'platform': None, 'privacyAgreement': {'name': 'TXNagb3', 'privacyButtons': [], 'text': '', 'title': ''}, 'optIn': {'name': 'TXNagb3', 'privacyButtons': [], 'text': '', 'title': ''}, 'urlTermsOfUse': 'https://tt-wordpress.thinxnet.com/automatischernotrufagb', 'bodyTextTextColor': '#08495D', 'bodyTextBackgroundColor': '#FFFFFF', 'bodyText': None, 'titleTextColor': '#FFFFFF', 'titleBackgroundColor': '#ff4e55', 'title': 'Manueller Notruf', 'insuranceId': '', 'infoText': 'Bei einem manuellen Notruf werden die von Dir angegebenen Informationen zu Deiner Person, Telefonnummer, Deinem Fahrzeug und Standortinformationen an eine Notrufzentrale übermittelt, während Du den Anruf tätigst. Damit haben die Mitarbeiter der Notrufzentrale die Möglichkeit Dir schneller zu helfen.<p>Der Service funktioniert in Deutschland.</p><p>Weitere Informationen findest Du in den <a href=\"https://tt-wordpress.thinxnet.com/automatischernotrufagb\">Nutzungsbedingungen</a>.</p>', 'emergencyNumber': '08945206630', 'buttonTextColor': '#FFFFFF', 'buttonText': 'mCall auslösen', 'buttonIconUrl': '', 'buttonColor': '#ff4e55', 'id': 'mCall_DEFAULT'}, {'_id': 'bCall_DEFAULT', 'serviceProvider': 'TXN', 'providerConfiguration': 'TXN_IMA_bCall', 'feature': 'bCall', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '', 'platform': None, 'dtcCard': {'bodyText': None, 'buttonText': None, 'title': None, 'showBCallButtonOnDtcCard': False}, 'buttons': [{'buttonColor': '#14ADDD', 'buttonText': 'Standort übermitteln und anrufen', 'buttonTextColor': '#FFFFFF', 'sendAdditionalData': True}, {'buttonColor': '#14ADDD', 'buttonText': 'Nur anrufen', 'buttonTextColor': '#FFFFFF', 'sendAdditionalData': False}], 'buttonsInfoText': None, 'privacyAgreement': {'name': 'TXNagb1', 'privacyButtons': [], 'text': '', 'title': ''}, 'optIn': {'name': 'TXNagb1', 'url': '', 'privacyButtons': [], 'text': 'Damit kannst Du im Falle eines Notfalls schnell eine Notrufzentrale kontaktieren. Um diesen Service freischalten zu können, musst Du voher die Nutzungsbedingungen lesen und ihnen zustimmen.', 'title': ''}, 'urlTermsOfUse': 'https://tt-wordpress.thinxnet.com/automatischernotrufagb/', 'bodyTextTextColor': '#08495D', 'bodyTextBackgroundColor': '#FFFFFF', 'bodyText': None, 'titleTextColor': '#FFFFFF', 'titleBackgroundColor': '#14ADDD', 'title': 'Manueller Pannenruf', 'insuranceId': '', 'infoText': 'Bei einem manuellen Pannenruf werden die von Dir angegebenen Informationen zu Deiner Person, Telefonnummer, Deinem Fahrzeug und Standortinformationen an eine Notrufzentrale übermittelt, während Du den Anruf tätigst. Damit haben die Mitarbeiter der Notrufzentrale die Möglichkeit Dir schneller zu helfen.<p>Der Service funktioniert in Deutschland.</p><p>Weitere Informationen findest Du in den <a href=\"https://tt-wordpress.thinxnet.com/automatischernotrufagb/\">Nutzungsbedingungen</a>.</p>', 'buttonTextColor': '#FFFFFF', 'buttonText': 'bCall auslösen', 'buttonIconUrl': '', 'buttonColor': '#14ADDD', 'breakdownNumber': '+4989143688345', 'id': 'bCall_DEFAULT'}, {'_id': 'taxBook_DEFAULT', '__v': 0, 'feature': 'taxBook', 'target': 'THING', 'urlPushImage': None, 'urlLogo': '', 'minAppVersion': '', 'platform': None, 'urlTermsOfUse': 'https://ryd.one/agb/#fahrtenbuch', 'shopItem': {'_id': 'TAXBOOK_SUBSCRIPTION_2021', 'costOption': '57500af2d3eb94079819c723', 'quantity': 1}, 'id': 'taxBook_DEFAULT'}, {'_id': 'homeScreenCustomizations_DEFAULT', 'backgroundColor': '#FFFFFF', 'bodyTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', 'titleTextColor': '#08495D', 'title': 'Feature Title', '__v': 0, 'sendToKafka': True, 'feature': 'homeScreenCustomizations', 'target': 'THING', 'urlPushImage': '', 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '2.17', 'platform': None, 'xCallRadialButtonIconUrl': None, 'xCallCommonName': 'Notruf', 'splashScreenLogoUrl': '', 'splashScreenLogoBackgroundColor': '#FFFFFF', 'campaignTextColor': '#FFFFFF', 'campaignBackgroundColor': '#0F85AA', 'campaignTitle': '%ttBalance%', 'historyTextColor': '#FFFFFF', 'historyBackgroundColor': '#139FC9', 'historyTitle': 'Verlauf', 'vehicleStatsTextColor': '#FFFFFF', 'vehicleStatsBackgroundColor': '#14addd', 'vehicleStatsTitle': '%nickName%', 'barBackgroundColor': '#14ADDD', 'logoBackgroundColor': '#FFFFFF', 'textBackgroundColor': '#FFFFFF', 'textFontColor': '#CCCCCC', 'text': 'Sponsored by', 'id': 'homeScreenCustomizations_DEFAULT'}, {'_id': 'tripEndNotification_VGH', '__v': 0, 'feature': 'tripEndNotification', 'target': 'THING', 'urlPushImage': 'https://img-1.thinxcloud.de/vgh/vgh-logo.png', 'urlLogo': '', 'minAppVersion': '', 'platform': None, 'pushDeeplink': '#eventlog', 'tripEndPushTextSnippet': 'Länge: ${tripDistanceKm} km | Dauer: ${tripDurationH} h | ø ${avgSpeedKmH} km/h | Max: ${maxSpeedKmH} km/h | Starke Beschleunigungen: ${countHardBraking} | Starke Bremsungen: ${countHardBraking} | Mehr Details...', 'pushText': 'payAsYouDrive|tripStatisticsSnippet', 'id': 'tripEndNotification_VGH'}, {'_id': 'easyPark_DEFAULT', 'title': 'Feature Title', 'feature': 'easyPark', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/ryd.png', 'minAppVersion': '2.40', 'platform': None, 'parkingZoneSearchPageUrl': 'https://ryd-parking.ch/', 'requiredPackage': 'PREMIUM', 'privacyAgreement': {'name': 'easyParkOptIn', 'url': 'https://ch.ryd.one/dataprotection-ryd-app/', 'privacyButtons': [], 'text': 'Hiermit stimme ich den Sonder-AGB zur Nutzung von EasyPark zu.', 'title': ''}, 'optIn': {'name': 'easyParkOptIn', 'url': 'https://ch.ryd.one/dataprotection-ryd-app/', 'privacyButtons': [], 'text': 'Hiermit stimme ich den Sonder-AGB zur Nutzung von EasyPark zu.', 'title': ''}, 'id': 'easyPark_DEFAULT'}, {'_id': 'partnerTile_CARHELPER', 'featureTag': 'carhelper', 'title': 'Service buchen in Deiner Nähe', 'text': 'Steht ein Reifenwechsel oder Autoservice an? Jetzt Preise vergleichen und einen Termin in Deiner Nähe buchen.', 'imageUrl': 'https://img-1.thinxcloud.de/carhelper/carhelper_logo_padding.png', 'info': '', 'button': {'text': 'Online buchen', 'url': 'https://secure-redirect.thinxcloud-dev.de/carhelper/{language}/ryd-service?_cv={vin}&_clp={licensePlate}&_cfr={year}&_cm={distance}&_cbn={make}&_id={uuid}&_ufn={firstName}&_uln={lastName}&_ue={email}&_up={phoneNumber}&_ua={street}+{houseNumber}+{street2}&_uc={city}&_uz={zip}&_ps=0&_sid={sponsorId}'}, 'privacyAgreement': {'name': 'carhelperOptinv1', 'imageUrl': 'https://img-1.thinxcloud.de/carhelper/carhelper_logo.png', 'privacyButtons': [{'text': 'Datenschutzerklärung von ryd', 'url': 'https://ch.ryd.one/dataprotection-ryd-app/'}, {'text': 'Datenschutzerklärung von Carhelper', 'url': 'https://www.carhelper.ch/privacy'}], 'text': 'Ja! Erstelle mir anhand meiner Daten eine persönliche Offerte für mein Auto.\\n\\nIch willige ein, dass mir die AXA und/oder Carhelper im Rahmen von Marketingaktivitäten und/oder Weiterentwicklung der Produkte Informationen über Produkte und Dienstleistungen zusenden darf.', 'title': 'Deine Einwilligung zur Datennutzung'}, '__v': 12, 'feature': 'partnerTile', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/carhelper/carhelper_logo.png', 'minAppVersion': '2.40', 'platform': None, 'backgroundColor': '#08495D', 'textColor': '#ffffff', 'id': 'partnerTile_CARHELPER'}, {'_id': 'sponsorLifecycle_AXA_CH_DRIVEPARTNER', 'offboardingEmailSubject': None, 'feature': 'sponsorLifecycle', 'target': 'THING', 'urlPushImage': None, 'urlLogo': '', 'minAppVersion': '', 'platform': None, 'firstPluginEmailTemplateName': 'BE_1st_PlugIn_AXA', 'cableOrderDialog': 'ENABLED', 'carBoxPluggedOutForTooLong': None, 'carBoxConfigChangeToUnpausedCorrectCar': None, 'carBoxConfigChangeToPausedWrongCar': None, 'sendToKafka': 'false', 'carBoxNotPluggedInEscalationToPartner': None, 'carBoxNotPickedUpEmail': None, 'carBoxNotPluggedInSecondReminder': None, 'carBoxNotPluggedInFirstReminder': None, 'contractChangeToPaused': 'BE_SISTIERUNG_AXA', 'contractChangeToActive': 'BE_CONTRACT_ACTIVE_AGAIN_AXA', 'carBoxConfigChangeToActive': None, 'carBoxConfigChangeToPaused': 'BE_SISTIERUNG_AXA', 'carBoxConfigChangeToCrashbox': None, 'carBoxConfigChangeToRydbox': 'BE_CHANGE_CRASHBOX_TO_DRIVEPARTNER_AXA', 'carChangeNoNeedCableEmailTemplate': 'BE_CAR_CHANGE_INFO_AXA', 'carChangeNeedCableEmailTemplate': 'BE_CAR_CHANGE_INFO_DESA_AXA', 'contractCancelEmailReminderTemplate': None, 'contractCancelEmailTemplate': 'BE_RETURN_ENQUIRY_01_AXA', 'welcomeInboxTemplate': None, 'offboardingEmailTemplateName': None, 'onboardingEmailTemplateName': None, 'shippingInfoEmailTemplateName': 'SF_DONGLE_DISPATCH_NOTIFICATION_ORDER_DP', 'deliveryNoteEmailTemplateName': 'SF_ORDER_DELIVERY_NOTE', 'orderSummaryEmailTemplateName': None, 'welcomeEmailTemplateName': 'BE_WELCOME_DRIVEPARTNER_AXA', 'id': 'sponsorLifecycle_AXA_CH_DRIVEPARTNER'}], 'features': ['eCall', 'contactCard', 'fuelBonus', 'ttCampaigns', 'sml', 'fastLane', 'ecoScore', 'accidentReport', 'bCall', 'mCall', 'homeScreenCustomizations', 'tripEndNotification', 'easyPark', 'partnerTile', 'sponsorLifecycle'], 'urlTermsOfUse': 'https://tanktaler.de', 'urlLogo': 'https://placeholdit.imgix.net/~text?txtsize=33&txt=Default%20Sponsor&w=500&h=200', 'urlDataPrivacyExtensions': None, 'name': 'TT Default', 'color': None, 'category': ['TXN'], 'featureDetails': {'sponsorLifecycle': {'_id': 'sponsorLifecycle_AXA_CH_DRIVEPARTNER', 'offboardingEmailSubject': None, 'feature': 'sponsorLifecycle', 'target': 'THING', 'urlPushImage': None, 'urlLogo': '', 'minAppVersion': '', 'platform': None, 'firstPluginEmailTemplateName': 'BE_1st_PlugIn_AXA', 'cableOrderDialog': 'ENABLED', 'carBoxPluggedOutForTooLong': None, 'carBoxConfigChangeToUnpausedCorrectCar': None, 'carBoxConfigChangeToPausedWrongCar': None, 'sendToKafka': 'false', 'carBoxNotPluggedInEscalationToPartner': None, 'carBoxNotPickedUpEmail': None, 'carBoxNotPluggedInSecondReminder': None, 'carBoxNotPluggedInFirstReminder': None, 'contractChangeToPaused': 'BE_SISTIERUNG_AXA', 'contractChangeToActive': 'BE_CONTRACT_ACTIVE_AGAIN_AXA', 'carBoxConfigChangeToActive': None, 'carBoxConfigChangeToPaused': 'BE_SISTIERUNG_AXA', 'carBoxConfigChangeToCrashbox': None, 'carBoxConfigChangeToRydbox': 'BE_CHANGE_CRASHBOX_TO_DRIVEPARTNER_AXA', 'carChangeNoNeedCableEmailTemplate': 'BE_CAR_CHANGE_INFO_AXA', 'carChangeNeedCableEmailTemplate': 'BE_CAR_CHANGE_INFO_DESA_AXA', 'contractCancelEmailReminderTemplate': None, 'contractCancelEmailTemplate': 'BE_RETURN_ENQUIRY_01_AXA', 'welcomeInboxTemplate': None, 'offboardingEmailTemplateName': None, 'onboardingEmailTemplateName': None, 'shippingInfoEmailTemplateName': 'SF_DONGLE_DISPATCH_NOTIFICATION_ORDER_DP', 'deliveryNoteEmailTemplateName': 'SF_ORDER_DELIVERY_NOTE', 'orderSummaryEmailTemplateName': None, 'welcomeEmailTemplateName': 'BE_WELCOME_DRIVEPARTNER_AXA', 'id': 'sponsorLifecycle_AXA_CH_DRIVEPARTNER'}, 'partnerTile': {'_id': 'partnerTile_CARHELPER', 'featureTag': 'carhelper', 'title': 'Service buchen in Deiner Nähe', 'text': 'Steht ein Reifenwechsel oder Autoservice an? Jetzt Preise vergleichen und einen Termin in Deiner Nähe buchen.', 'imageUrl': 'https://img-1.thinxcloud.de/carhelper/carhelper_logo_padding.png', 'info': '', 'button': {'text': 'Online buchen', 'url': 'https://secure-redirect.thinxcloud-dev.de/carhelper/{language}/ryd-service?_cv={vin}&_clp={licensePlate}&_cfr={year}&_cm={distance}&_cbn={make}&_id={uuid}&_ufn={firstName}&_uln={lastName}&_ue={email}&_up={phoneNumber}&_ua={street}+{houseNumber}+{street2}&_uc={city}&_uz={zip}&_ps=0&_sid={sponsorId}'}, 'privacyAgreement': {'name': 'carhelperOptinv1', 'imageUrl': 'https://img-1.thinxcloud.de/carhelper/carhelper_logo.png', 'privacyButtons': [{'text': 'Datenschutzerklärung von ryd', 'url': 'https://ch.ryd.one/dataprotection-ryd-app/'}, {'text': 'Datenschutzerklärung von Carhelper', 'url': 'https://www.carhelper.ch/privacy'}], 'text': 'Ja! Erstelle mir anhand meiner Daten eine persönliche Offerte für mein Auto.\\n\\nIch willige ein, dass mir die AXA und/oder Carhelper im Rahmen von Marketingaktivitäten und/oder Weiterentwicklung der Produkte Informationen über Produkte und Dienstleistungen zusenden darf.', 'title': 'Deine Einwilligung zur Datennutzung'}, '__v': 12, 'feature': 'partnerTile', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/carhelper/carhelper_logo.png', 'minAppVersion': '2.40', 'platform': None, 'backgroundColor': '#08495D', 'textColor': '#ffffff', 'id': 'partnerTile_CARHELPER'}, 'easyPark': {'_id': 'easyPark_DEFAULT', 'title': 'Feature Title', 'feature': 'easyPark', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/ryd.png', 'minAppVersion': '2.40', 'platform': None, 'parkingZoneSearchPageUrl': 'https://ryd-parking.ch/', 'requiredPackage': 'PREMIUM', 'privacyAgreement': {'name': 'easyParkOptIn', 'url': 'https://ch.ryd.one/dataprotection-ryd-app/', 'privacyButtons': [], 'text': 'Hiermit stimme ich den Sonder-AGB zur Nutzung von EasyPark zu.', 'title': ''}, 'optIn': {'name': 'easyParkOptIn', 'url': 'https://ch.ryd.one/dataprotection-ryd-app/', 'privacyButtons': [], 'text': 'Hiermit stimme ich den Sonder-AGB zur Nutzung von EasyPark zu.', 'title': ''}, 'id': 'easyPark_DEFAULT'}, 'tripEndNotification': {'_id': 'tripEndNotification_VGH', '__v': 0, 'feature': 'tripEndNotification', 'target': 'THING', 'urlPushImage': 'https://img-1.thinxcloud.de/vgh/vgh-logo.png', 'urlLogo': '', 'minAppVersion': '', 'platform': None, 'pushDeeplink': '#eventlog', 'tripEndPushTextSnippet': 'Länge: ${tripDistanceKm} km | Dauer: ${tripDurationH} h | ø ${avgSpeedKmH} km/h | Max: ${maxSpeedKmH} km/h | Starke Beschleunigungen: ${countHardBraking} | Starke Bremsungen: ${countHardBraking} | Mehr Details...', 'pushText': 'payAsYouDrive|tripStatisticsSnippet', 'id': 'tripEndNotification_VGH'}, 'homeScreenCustomizations': {'_id': 'homeScreenCustomizations_DEFAULT', 'backgroundColor': '#FFFFFF', 'bodyTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', 'titleTextColor': '#08495D', 'title': 'Feature Title', '__v': 0, 'sendToKafka': True, 'feature': 'homeScreenCustomizations', 'target': 'THING', 'urlPushImage': '', 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '2.17', 'platform': None, 'xCallRadialButtonIconUrl': None, 'xCallCommonName': 'Notruf', 'splashScreenLogoUrl': '', 'splashScreenLogoBackgroundColor': '#FFFFFF', 'campaignTextColor': '#FFFFFF', 'campaignBackgroundColor': '#0F85AA', 'campaignTitle': '%ttBalance%', 'historyTextColor': '#FFFFFF', 'historyBackgroundColor': '#139FC9', 'historyTitle': 'Verlauf', 'vehicleStatsTextColor': '#FFFFFF', 'vehicleStatsBackgroundColor': '#14addd', 'vehicleStatsTitle': '%nickName%', 'barBackgroundColor': '#14ADDD', 'logoBackgroundColor': '#FFFFFF', 'textBackgroundColor': '#FFFFFF', 'textFontColor': '#CCCCCC', 'text': 'Sponsored by', 'id': 'homeScreenCustomizations_DEFAULT'}, 'taxBook': {'_id': 'taxBook_DEFAULT', '__v': 0, 'feature': 'taxBook', 'target': 'THING', 'urlPushImage': None, 'urlLogo': '', 'minAppVersion': '', 'platform': None, 'urlTermsOfUse': 'https://ryd.one/agb/#fahrtenbuch', 'shopItem': {'_id': 'TAXBOOK_SUBSCRIPTION_2021', 'costOption': '57500af2d3eb94079819c723', 'quantity': 1}, 'id': 'taxBook_DEFAULT'}, 'bCall': {'_id': 'bCall_DEFAULT', 'serviceProvider': 'TXN', 'providerConfiguration': 'TXN_IMA_bCall', 'feature': 'bCall', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '', 'platform': None, 'dtcCard': {'bodyText': None, 'buttonText': None, 'title': None, 'showBCallButtonOnDtcCard': False}, 'buttons': [{'buttonColor': '#14ADDD', 'buttonText': 'Standort übermitteln und anrufen', 'buttonTextColor': '#FFFFFF', 'sendAdditionalData': True}, {'buttonColor': '#14ADDD', 'buttonText': 'Nur anrufen', 'buttonTextColor': '#FFFFFF', 'sendAdditionalData': False}], 'buttonsInfoText': None, 'privacyAgreement': {'name': 'TXNagb1', 'privacyButtons': [], 'text': '', 'title': ''}, 'optIn': {'name': 'TXNagb1', 'url': '', 'privacyButtons': [], 'text': 'Damit kannst Du im Falle eines Notfalls schnell eine Notrufzentrale kontaktieren. Um diesen Service freischalten zu können, musst Du voher die Nutzungsbedingungen lesen und ihnen zustimmen.', 'title': ''}, 'urlTermsOfUse': 'https://tt-wordpress.thinxnet.com/automatischernotrufagb/', 'bodyTextTextColor': '#08495D', 'bodyTextBackgroundColor': '#FFFFFF', 'bodyText': None, 'titleTextColor': '#FFFFFF', 'titleBackgroundColor': '#14ADDD', 'title': 'Manueller Pannenruf', 'insuranceId': '', 'infoText': 'Bei einem manuellen Pannenruf werden die von Dir angegebenen Informationen zu Deiner Person, Telefonnummer, Deinem Fahrzeug und Standortinformationen an eine Notrufzentrale übermittelt, während Du den Anruf tätigst. Damit haben die Mitarbeiter der Notrufzentrale die Möglichkeit Dir schneller zu helfen.<p>Der Service funktioniert in Deutschland.</p><p>Weitere Informationen findest Du in den <a href=\"https://tt-wordpress.thinxnet.com/automatischernotrufagb/\">Nutzungsbedingungen</a>.</p>', 'buttonTextColor': '#FFFFFF', 'buttonText': 'bCall auslösen', 'buttonIconUrl': '', 'buttonColor': '#14ADDD', 'breakdownNumber': '+4989143688345', 'id': 'bCall_DEFAULT'}, 'mCall': {'_id': 'mCall_DEFAULT', 'serviceProvider': 'TXN', 'providerConfiguration': 'TXN_TXN_mCall', 'feature': 'mCall', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '', 'platform': None, 'privacyAgreement': {'name': 'TXNagb3', 'privacyButtons': [], 'text': '', 'title': ''}, 'optIn': {'name': 'TXNagb3', 'privacyButtons': [], 'text': '', 'title': ''}, 'urlTermsOfUse': 'https://tt-wordpress.thinxnet.com/automatischernotrufagb', 'bodyTextTextColor': '#08495D', 'bodyTextBackgroundColor': '#FFFFFF', 'bodyText': None, 'titleTextColor': '#FFFFFF', 'titleBackgroundColor': '#ff4e55', 'title': 'Manueller Notruf', 'insuranceId': '', 'infoText': 'Bei einem manuellen Notruf werden die von Dir angegebenen Informationen zu Deiner Person, Telefonnummer, Deinem Fahrzeug und Standortinformationen an eine Notrufzentrale übermittelt, während Du den Anruf tätigst. Damit haben die Mitarbeiter der Notrufzentrale die Möglichkeit Dir schneller zu helfen.<p>Der Service funktioniert in Deutschland.</p><p>Weitere Informationen findest Du in den <a href=\"https://tt-wordpress.thinxnet.com/automatischernotrufagb\">Nutzungsbedingungen</a>.</p>', 'emergencyNumber': '08945206630', 'buttonTextColor': '#FFFFFF', 'buttonText': 'mCall auslösen', 'buttonIconUrl': '', 'buttonColor': '#ff4e55', 'id': 'mCall_DEFAULT'}, 'eCall': {'_id': 'eCall_DEFAULT', 'serviceProvider': 'TXN', 'providerConfiguration': 'TXN_IMA_eCall', 'optIn': {'name': 'IMAagb2', 'privacyButtons': [], 'text': '', 'title': ''}, 'privacyAgreement': {'name': 'newAgb1', 'privacyButtons': [], 'text': '', 'title': ''}, 'feature': 'eCall', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '', 'platform': None, 'requiredPackage': 'PREMIUM', 'passiveECallNotification': {'infoText': 'Hilfe benötigt?', 'smsText': 'Es wurde eine Erschütterung an Deinem Fahrzeug festgestellt. Ist alles in Ordnung bei Dir? Solltest Du Hilfe benötigen, dann ruf den Schadenservice an: +49 089 4520 66321', 'helpPhoneNumber': '+49 089 4520 66321', 'helpLink': 'https://damage-report.ryd.one/', '_id': '6369f9f76445b4ebfc39beaf', 'homeCountryCodes': ['DE']}, 'setupDongleMount': {'checkBoxText': 'Ich versichere, dass meine ryd box fest steckt oder fixiert ist.', 'text': 'Stelle sicher, dass Deine ryd box fest eingesteckt ist.\\n\\nFalls Du ein Verlängerungskabel nutzt, muss die Box in einer Halterung oder mit anderen Mitteln fixiert werden. Sie darf nicht frei beweglich sein.'}, 'setupPrivacyPolicy': {'checkBoxText': 'Ich habe die Nutzungsbedingungen für den Automatischen Notruf gelesen und stimme ihnen zu.', 'text': 'Damit Du rund um die Uhr so schnell wie möglich gerettet wirst, werden die von Dir angegebenen Informationen zu Deiner Person, Deinem Fahrzeug und Standortinformationen zum Unfallort und Deiner Fahrtrichtung von einer beauftragten Notrufzentrale verarbeitet.\\n\\nDie Datenübermittlung an die Notrufzentrale findet ausschließlich in folgenden Fällen statt: automatischer Unfall erkannt, manueller Notruf ausgelöst, manueller Pannenruf ausgelöst. Die Daten werden verschlüsselt übermittelt. Die Notrufzentrale kann Deine Daten nur zur Schadenabwicklung verwenden.\\n\\nWeitere Informationen findest Du in den Nutzungsbedingungen.'}, 'setupIntroduction': {'text': 'Bitte prüfe und ergänze auf den nächsten Seiten Deine Daten, damit wir die Notruf-Funktionen für dein Fahrzeug aktivieren können.', 'title': 'Automatischer Notruf aktivieren für dein Fahrzeug'}, 'disabledText': 'Automatischer Notruf ist nicht aktiv. Bei einem Unfall kommt keine Hilfe.', 'enabledText': '\\tAutomatischer Notruf ist aktiv für Dein Auto. Bei einem Unfall wird automatisch Hilfe gerufen.', 'urlTermsOfUse': 'https://tt-wordpress.thinxnet.com/automatischernotrufagb', 'bodyTextTextColor': '#08495D', 'bodyTextBackgroundColor': '#FFFFFF', 'bodyText': None, 'titleTextColor': '#08495D', 'titleBackgroundColor': '#FFFFFF', 'title': 'I changed the title to be recognisable', 'signUpName': 'Notruf aktivieren', 'insuranceId': 'AXA', 'infoText': 'Wir messen mit Deinem TankTaler Stecker starke Geschwindigkeits- und Richtungsänderungen. Wenn gewisse Werte überstiegen werden – beispielsweise wenn Dein Auto in wenigen Sekunden von 150 km/h auf 0 km/h abbremst und danach nicht weiterfährt – interpretiert der Stecker das als Unfall und löst automatisch einen Notruf aus.<p>Dabei werden die von Dir angegebenen Informationen zu Deiner Person, Telefonnummer, Deinem Fahrzeug und Standortinformationen zum Unfallort und Deiner Fahrtrichtung über eine verschlüsselte Verbindung an eine beauftragte Notrufzentrale übermittelt. Mit diesen Daten kann die Notrufzentrale Rettungsdienste oder Pannenhilfe wesentlich besser informieren und lotsen. Damit ist im Ernstfall schneller Hilfe bei Dir, die schon weiß, was sie am Unfallort erwartet.</p><p>Der Service funktioniert in Deutschland.</p><p>Weitere Informationen findest Du in den <a href=\"https://tt-wordpress.thinxnet.com/automatischernotrufagb\">Nutzungsbedingungen</a>.</p>', 'id': 'eCall_DEFAULT'}, 'accidentReport': {'_id': 'accidentReport_DEFAULT', '__v': 0, 'feature': 'accidentReport', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'platform': None, 'accidentReportWebapp': {'backgroundColor': '#FFFFFF', 'urlLogo': None, 'consentBody': None, 'consentTitle': None}, 'title': 'Schadenmeldung', 'titleBackgroundColor': '#FFFFFF', 'titleTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', 'bodyTextColor': '#08495D', 'backgroundColor': '#FFFFFF', 'recipientEmailAddress': 'christoph.federwisch+ARSTAGING@thinxnet.com', 'minAppVersion': '2.22', 'mandrillTemplateName': 'BE_ACCIDENT_REPORT_DEFAULT_DE', 'infoText': 'Neuer Infotext (brandneu: jetzt editierbar)', 'emailSubject': 'Schadenmeldung', 'buttonUrl': 'https://damage-report-staging.ryd.one?firstName=[<user.firstName>]&lastName=[<user.lastName>]&email=[<user.email>]&licensePlate=[<thing.status.licensePlate>]&token=[<token>]', 'buttonTextColor': '#FFFFFF', 'buttonColor': '#08495D ', 'body': 'Du kannst hier direkt einen Schaden zur Abwicklung melden.', 'id': 'accidentReport_DEFAULT'}, 'ecoScore': {'_id': 'ecoScore_DEFAULT', 'tripEndPushDeeplink': '#eventlog', 'tripEndPushTextPrefix': None, '__v': 0, 'feature': 'ecoScore', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'platform': None, 'urlTermsOfUse': 'https://links.tt.nf/terms', 'tripEndPushTextSnippet': 'EcoScore: ${ecoScore}', 'trafficFactor': 0, 'titleTextColor': '#08495D', 'titleBackgroundColor': '#FFFFFF', 'title': 'Feature Title', 'speedFactor': 1, 'name': 'es_v1.0', 'minPointsGranted': 0, 'minDistanceM': 1000, 'minAppVersion': '2.22', 'maxPointsGranted': 0, 'infoText': None, 'headline': 'ThinxNet EcoScore', 'distanceFactor': 1, 'brakingFactor': 0.8, 'bodyTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', 'backgroundColor': '#FFFFFF', 'accelerationFactor': 1.2, 'id': 'ecoScore_DEFAULT'}, 'sml': {'_id': 'sml_DEFAULT', 'backgroundColor': '#08495D', 'bodyTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', 'titleTextColor': '#08495D', 'title': 'Feature Title', '__v': 0, 'feature': 'sml', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '2.19', 'platform': None, 'sharingText': None, 'target': 'THING', 'id': 'sml_DEFAULT'}, 'fastLane': {'_id': 'fastLane_DEFAULT', 'backgroundColor': '#FFFFFF', 'bodyTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', 'titleTextColor': '#08495D', 'title': 'Feature Title', '__v': 0, 'feature': 'fastLane', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '2.17', 'platform': None, 'accountGroupId': None, 'id': 'fastLane_DEFAULT'}, 'contactCard': {'_id': 'contactCard_DEFAULT', 'urlImage1': 'https://img-1.thinxcloud.de/support.png', '__v': 26, 'urlLogo1': 'https://img-1.thinxcloud.de/tanktaler.png', 'feature': 'contactCard', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://axa.ch/etc/clientlibs/axa/frontend-lib/images/logo-AXA.svg', 'minAppVersion': '2.16', 'platform': None, 'logoUrl': None, 'urlTermsOfUse': 'https://links.tt.nf/terms', 'titleTextColor': '#08495D', 'titleBackgroundColor': '#FFFFFF', 'phone': '+49 89 452066321', 'infoText': None, 'email': 'hilfe@tanktaler.de', 'categoryName': None, 'bodyTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', 'textColor': '#08495D', 'backgroundColor': '#FFFFFF', 'address': 'therwilHauptagentur, Gerardo Castellano, Oberwilerstrasse 73, 4106 Therwil', 'urlImage': 'https://axa.ch/content/dam/axa/agents/therwil.jpg/_jcr_content/renditions/original', 'title': 'TankTaler ist für Dich da', 'text': 'Das ist die <bold>erste</bold> Zeile<br>und das die zweite', 'name': 'Unsere Kontaktdaten', 'links': [{'type': 'PHONE', 'text': '+49 89 452066321'}, {'type': 'WEB', 'text': 'https://de.ryd.one'}, {'type': 'ADDRESS', 'text': 'München'}, {'type': 'EMAIL', 'text': 'hilfe@tanktaler.de'}], 'id': 'contactCard_DEFAULT'}, 'ttCampaigns': {'_id': 'ttCampaigns_DEFAULT', 'backgroundColor': '#FFFFFF', 'bodyTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', '__v': 0, 'feature': 'ttCampaigns', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '2.17', 'platform': None, 'target': 'THING', 'title': 'Feature Title', 'titleBackgroundColor': '#FFFFFF', 'titleTextColor': '#08495D', 'id': 'ttCampaigns_DEFAULT'}, 'fuelBonus': {'_id': 'fuelBonus_DEFAULT', 'backgroundColor': '#FFFFFF', 'bodyTextColor': '#08495D', 'bodyText': 'Das ist ein Feature Text', 'titleTextColor': '#08495D', 'title': 'Feature Title', '__v': 0, 'feature': 'fuelBonus', 'target': 'THING', 'urlPushImage': None, 'urlLogo': 'https://img-1.thinxcloud.de/tanktaler.png', 'minAppVersion': '2.17', 'platform': None, 'DONGLE': {'overridePoiDefinedPoints': False, 'pointsPerLiterUnknownStation': 20, 'pointsPerLiterP4G': 20, 'pointsPerLiter': 20}, 'APP_ONLY': {'overridePoiDefinedPoints': False, 'pointsPerLiterUnknownStation': 20, 'pointsPerLiterP4G': 10, 'pointsPerLiter': 10}, 'id': 'fuelBonus_DEFAULT'}}, 'id': '597858b314e70f074769f743'}], 'invalidated': False, 'ymme': {'isSharedLicensePlate': False, 'contractStateChangeTimestamp': None, 'insuranceContractState': None, 'vehicleClassId': None, 'needsReview': False, 'licensePlate': '', 'tsn': None, 'hsn': None, 'VIN': None, 'insuranceNo': None}, 'status': {'recurrences': [], 'carOdometer': {'initialSyncDone': False, 'syncRequestReason': None, 'syncTimestamp': None, 'syncRequired': False, 'timestamp': None, 'distanceM': 0, 'source': 'USER'}, 'openDtcs': {'countOfOpenDtcs': 0, 'last': None}, 'score': {'ecoScore': None}, 'reportedFuelTotal': {'modificationTimestamp': '2022-11-08T06:40:48.479Z', 'fuelL': 0, 'measurementPeriod': '2022-11-08T06:40:48.000Z', 'measurementDistanceM': 500000, 'lifetimeConsumption': 0}, 'incognito': False, 'batteryHealth': 'unknown', 'estimates': None, 'pointsEarned': 0, 'state': 'UNKNOWN', 'parkingLocation': {'timestamp': '2022-11-08T06:40:48.479Z', 'loc': [], 'addressString': ''}, 'curLocation': {'timestamp': '2022-11-08T06:40:48.479Z', 'loc': []}, 'fuelTankSizeL': 55, 'distanceSinceLastTopUpM': 0, 'odoTtM': 0, 'odoCarM': 0, 'licensePlate': ''}, 'measurementFeatures': {'tripEndEventSupported': False, 'tripStartEventSupported': False, 'obdEnabled': False, 'isObdSpeedCorrupt': False, 'carOdometer': 'NA', 'fuelLevelVolume': 'CALC', 'fuelLevelPercent': 'CALC', 'fuelLevelSource': 'CALC', 'avgFuelConsumedPer100km': 'CALC', 'towEventSupported': False, 'fuelConsumption': [], 'fuelLevel': [], 'dtcs': False}, 'features': {'partnerTile': {'carhelper': {'uuid': None}}, 'easyPark': {'optIn': {'timestamp': None, 'accepted': False}, 'timestamp': None, 'parkingSessionStarted': False, 'autoStopParking': False, 'active': False}, 'ttSubscription': {'shopItems': None, 'paymentId': None, 'type': None, 'periodMonths': None, 'contractId': None, 'autoRenew': False, 'expiryDate': None, 'package': 'APP_ONLY'}, 'taxBook': {'paymentId': None, 'subscriptionCalendarYears': [], 'subscriptionEndDate': None, 'termsOfUseAcceptedDate': None}, 'contactCard': {'agent': None}, 'payAsYouDrive': {'dialogState': None, 'provider': None, 'contractEndDate': None, 'contractStartDate': None, 'tanktalerAgbAccepted': None, 'remainingDistanceM': None, 'pricePerKmEuro': None, 'maxPaidDistanceMPerCY': None, 'dataTransferTermsOfUseAcceptedDate': None, 'VIN': None, 'tsn': None, 'hsn': None, 'insuranceNo': None, 'licensePlate': None}, 'fuelConsumptionSource': 'USER', 'fuelMeasurementSource': 'USER', 'eCall': {'optIn': {'timestamp': None, 'accepted': False}, 'timestamp': None, 'active': False}, 'disableAverageFuelConsumptionCheckOnTopup': False, 'payments': [], 'enableLocationBasedFuelReminder': True}, 'users': [{'id': '6369f9f01e6a3beb4e04502a', 'role': 'THING_OWNER'}], 'nickName': 'ryd car', 'id': '6369f9f01e6a3beb4e04502c', 'devices': [{'_id': '6369f9f01e6a3beb4e04502b', 'id': '0943ab88-a9b6-47d2-83b2-5e54afe1ee38-0000', 'code': '0943ab88-a9b6-47d2-83b2-5e54afe1ee38-0000', 'type': 'MOBILE', 'state': 'ACTIVE', 'subscriptionState': 'APP_ONLY', 'pluggedIn': False, 'fwVersion': None}]}"
+          }, {
+            "name" : "test_id",
+            "value" : "None"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "user",
+          "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-S-DEL4-BP_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      6369f9f01e6a3beb4e04502a\taccounts: [{'id': '6369f9f01e6a3beb4e045029', 'role': 'ACCOUNT_OWNER'}]\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, None, None, None, None\tstatus:   Status.CreatedPasswordChanged\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: None\tcurrency: None\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+        }, {
+          "name" : "car_id",
+          "value" : "None"
+        }, {
+          "name" : "index",
+          "value" : "0"
+        }, {
+          "name" : "test_id",
+          "value" : "None"
+        } ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "User Worker: Check: Is user Lite?",
+        "time" : {
+          "start" : 1667889655345,
+          "stop" : 1667889655375,
+          "duration" : 30
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "user",
+          "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-S-DEL4-BP_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      6369f9f01e6a3beb4e04502a\taccounts: [{'id': '6369f9f01e6a3beb4e045029', 'role': 'ACCOUNT_OWNER'}]\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, None, None, None, None\tstatus:   Status.CreatedPasswordChanged\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: None\tcurrency: None\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+        }, {
+          "name" : "car_index",
+          "value" : "0"
+        }, {
+          "name" : "test_id",
+          "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+        }, {
+          "name" : "hard_assert",
+          "value" : "True"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "teardown__graylog_links",
+        "value" : "<SubRequest 'teardown__graylog_links' for <Function test__scenario__scan__v4_lite_buy_fuel[BP]>>"
+      }, {
+        "name" : "environment",
+        "value" : "STA"
+      }, {
+        "name" : "payment_setup",
+        "value" : "Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone"
+      }, {
+        "name" : "jenkins_checks",
+        "value" : "False"
+      }, {
+        "name" : "user_number",
+        "value" : "'11081'"
+      }, {
+        "name" : "country",
+        "value" : "Germany"
+      }, {
+        "name" : "locale",
+        "value" : "German"
+      }, {
+        "name" : "sso",
+        "value" : "False"
+      }, {
+        "name" : "payment_setup_mpm",
+        "value" : "None"
+      }, {
+        "name" : "user",
+        "value" : "None"
+      }, {
+        "name" : "fuel_purchase_flow",
+        "value" : "V4"
+      }, {
+        "name" : "test_id",
+        "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+      }, {
+        "name" : "car_index",
+        "value" : "0"
+      } ],
+      "stepsCount" : 14,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "TEST: Update user private info and tax ID",
+      "time" : {
+        "start" : 1667889655386,
+        "stop" : 1667889656577,
+        "duration" : 1191
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "User Worker: Update account",
+        "time" : {
+          "start" : 1667889655788,
+          "stop" : 1667889656375,
+          "duration" : 587
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Request TT4: update user",
+          "time" : {
+            "start" : 1667889655792,
+            "stop" : 1667889656375,
+            "duration" : 583
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "env",
+            "value" : "STA"
+          }, {
+            "name" : "auth_token",
+            "value" : "'55ab553d-ee3f-4dc3-ac35-c378d6db541e'"
+          }, {
+            "name" : "locale",
+            "value" : "German"
+          }, {
+            "name" : "user_id",
+            "value" : "'6369f9f01e6a3beb4e04502a'"
+          }, {
+            "name" : "fore_name",
+            "value" : "None"
+          }, {
+            "name" : "last_name",
+            "value" : "'TestLastName'"
+          }, {
+            "name" : "email",
+            "value" : "None"
+          }, {
+            "name" : "phone_number",
+            "value" : "None"
+          }, {
+            "name" : "nick_name",
+            "value" : "None"
+          }, {
+            "name" : "address",
+            "value" : "{'address': {'street': 'Blutenburgstrasse', 'street2': '', 'houseNumber': '18', 'city': 'München', 'zip': '80636', 'countryCode': 'DE'}}"
+          }, {
+            "name" : "tax_id",
+            "value" : "None"
+          }, {
+            "name" : "tax_country",
+            "value" : "Germany"
+          }, {
+            "name" : "test_id",
+            "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "user",
+          "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-s-del4-bp_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: \treferrer: Test\tuid:      6369f9f01e6a3beb4e04502a\taccounts: [{'id': '6369f9f01e6a3beb4e045029', 'role': 'ACCOUNT_OWNER'}]\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, None, None, None, None\tstatus:   Status.Lite\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: None\tcurrency: Currency.EUR\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+        }, {
+          "name" : "country",
+          "value" : "Germany"
+        }, {
+          "name" : "locale",
+          "value" : "German"
+        }, {
+          "name" : "fore_name",
+          "value" : "None"
+        }, {
+          "name" : "last_name",
+          "value" : "'TestLastName'"
+        }, {
+          "name" : "email",
+          "value" : "None"
+        }, {
+          "name" : "phone_number",
+          "value" : "None"
+        }, {
+          "name" : "nick_name",
+          "value" : "None"
+        }, {
+          "name" : "address",
+          "value" : "{'address': {'street': 'Blutenburgstrasse', 'street2': '', 'houseNumber': '18', 'city': 'München', 'zip': '80636', 'countryCode': 'DE'}}"
+        }, {
+          "name" : "tax_id",
+          "value" : "None"
+        }, {
+          "name" : "tax_country",
+          "value" : "Germany"
+        }, {
+          "name" : "test_id",
+          "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "teardown__graylog_links",
+        "value" : "<SubRequest 'teardown__graylog_links' for <Function test__scenario__scan__v4_lite_buy_fuel[BP]>>"
+      }, {
+        "name" : "environment",
+        "value" : "STA"
+      }, {
+        "name" : "user",
+        "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-S-DEL4-BP_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      6369f9f01e6a3beb4e04502a\taccounts: [{'id': '6369f9f01e6a3beb4e045029', 'role': 'ACCOUNT_OWNER'}]\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, None, None, None, None\tstatus:   Status.Lite\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: None\tcurrency: None\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+      }, {
+        "name" : "country",
+        "value" : "Germany"
+      }, {
+        "name" : "locale",
+        "value" : "German"
+      }, {
+        "name" : "jenkins_check",
+        "value" : "False"
+      }, {
+        "name" : "fore_name",
+        "value" : "None"
+      }, {
+        "name" : "last_name",
+        "value" : "'TestLastName'"
+      }, {
+        "name" : "email",
+        "value" : "None"
+      }, {
+        "name" : "phone_number",
+        "value" : "None"
+      }, {
+        "name" : "nick_name",
+        "value" : "None"
+      }, {
+        "name" : "address",
+        "value" : "Country.Germany, München, 80636, Blutenburgstrasse, 18"
+      }, {
+        "name" : "tax_id",
+        "value" : "None"
+      }, {
+        "name" : "tax_country",
+        "value" : "Germany"
+      }, {
+        "name" : "test_id",
+        "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+      }, {
+        "name" : "mark_xfail",
+        "value" : "None"
+      } ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "TEST: Update user tax ID",
+      "time" : {
+        "start" : 1667889656578,
+        "stop" : 1667889657577,
+        "duration" : 999
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "User Worker: Update account",
+        "time" : {
+          "start" : 1667889656978,
+          "stop" : 1667889657365,
+          "duration" : 387
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Request TT4: update user",
+          "time" : {
+            "start" : 1667889656978,
+            "stop" : 1667889657364,
+            "duration" : 386
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "env",
+            "value" : "STA"
+          }, {
+            "name" : "auth_token",
+            "value" : "'55ab553d-ee3f-4dc3-ac35-c378d6db541e'"
+          }, {
+            "name" : "locale",
+            "value" : "German"
+          }, {
+            "name" : "user_id",
+            "value" : "'6369f9f01e6a3beb4e04502a'"
+          }, {
+            "name" : "fore_name",
+            "value" : "None"
+          }, {
+            "name" : "last_name",
+            "value" : "None"
+          }, {
+            "name" : "email",
+            "value" : "None"
+          }, {
+            "name" : "phone_number",
+            "value" : "None"
+          }, {
+            "name" : "nick_name",
+            "value" : "None"
+          }, {
+            "name" : "address",
+            "value" : "{'address': {'street': 'Blutenburgstrasse', 'street2': '', 'houseNumber': '18', 'city': 'München', 'zip': '80636', 'countryCode': 'DE'}}"
+          }, {
+            "name" : "tax_id",
+            "value" : "None"
+          }, {
+            "name" : "tax_country",
+            "value" : "Germany"
+          }, {
+            "name" : "test_id",
+            "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "user",
+          "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-s-del4-bp_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      6369f9f01e6a3beb4e04502a\taccounts: [{'id': '6369f9f01e6a3beb4e045029', 'role': 'ACCOUNT_OWNER'}]\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.Lite\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: Country.Germany\tcurrency: Currency.EUR\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+        }, {
+          "name" : "country",
+          "value" : "None"
+        }, {
+          "name" : "locale",
+          "value" : "None"
+        }, {
+          "name" : "fore_name",
+          "value" : "None"
+        }, {
+          "name" : "last_name",
+          "value" : "None"
+        }, {
+          "name" : "email",
+          "value" : "None"
+        }, {
+          "name" : "phone_number",
+          "value" : "None"
+        }, {
+          "name" : "nick_name",
+          "value" : "None"
+        }, {
+          "name" : "address",
+          "value" : "{'address': {'street': 'Blutenburgstrasse', 'street2': '', 'houseNumber': '18', 'city': 'München', 'zip': '80636', 'countryCode': 'DE'}}"
+        }, {
+          "name" : "tax_id",
+          "value" : "None"
+        }, {
+          "name" : "tax_country",
+          "value" : "Germany"
+        }, {
+          "name" : "test_id",
+          "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "teardown__graylog_links",
+        "value" : "<SubRequest 'teardown__graylog_links' for <Function test__scenario__scan__v4_lite_buy_fuel[BP]>>"
+      }, {
+        "name" : "environment",
+        "value" : "STA"
+      }, {
+        "name" : "user",
+        "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-s-del4-bp_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      6369f9f01e6a3beb4e04502a\taccounts: [{'id': '6369f9f01e6a3beb4e045029', 'role': 'ACCOUNT_OWNER'}]\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.Lite\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: Country.Germany\tcurrency: Currency.EUR\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+      }, {
+        "name" : "tax_id",
+        "value" : "None"
+      }, {
+        "name" : "tax_country",
+        "value" : "Germany"
+      }, {
+        "name" : "test_id",
+        "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+      }, {
+        "name" : "mark_xfail",
+        "value" : "None"
+      }, {
+        "name" : "updating_existing_tax_id",
+        "value" : "True"
+      } ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "User Worker: Check: Is user payment method configured and activated?",
+      "time" : {
+        "start" : 1667889658252,
+        "stop" : 1667889658494,
+        "duration" : 242
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "User Worker: Get account psp feature",
+        "time" : {
+          "start" : 1667889658264,
+          "stop" : 1667889658479,
+          "duration" : 215
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Request TT4: get feature by ID",
+          "time" : {
+            "start" : 1667889658280,
+            "stop" : 1667889658463,
+            "duration" : 183
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "env",
+            "value" : "STA"
+          }, {
+            "name" : "auth_token",
+            "value" : "'55ab553d-ee3f-4dc3-ac35-c378d6db541e'"
+          }, {
+            "name" : "account_id",
+            "value" : "'6369f9f01e6a3beb4e045029'"
+          }, {
+            "name" : "feature_id",
+            "value" : "'psp'"
+          }, {
+            "name" : "locale",
+            "value" : "German"
+          }, {
+            "name" : "test_id",
+            "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "user",
+          "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-s-del4-bp_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      6369f9f01e6a3beb4e04502a\taccounts: [{'id': '6369f9f01e6a3beb4e045029', 'role': 'ACCOUNT_OWNER'}]\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.Lite\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: Country.Germany\tcurrency: Currency.EUR\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+        }, {
+          "name" : "account_index",
+          "value" : "0"
+        }, {
+          "name" : "test_id",
+          "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "user",
+        "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-s-del4-bp_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      6369f9f01e6a3beb4e04502a\taccounts: [{'id': '6369f9f01e6a3beb4e045029', 'role': 'ACCOUNT_OWNER'}]\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.Lite\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: Country.Germany\tcurrency: Currency.EUR\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+      }, {
+        "name" : "account_index",
+        "value" : "0"
+      }, {
+        "name" : "setting_up_process",
+        "value" : "False"
+      }, {
+        "name" : "is_preferred",
+        "value" : "None"
+      }, {
+        "name" : "hard_assert",
+        "value" : "False"
+      }, {
+        "name" : "test_id",
+        "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+      } ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "TEST: Subscribe to a payment service provider",
+      "time" : {
+        "start" : 1667889658495,
+        "stop" : 1667889693744,
+        "duration" : 35249
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: Checking if the amount of PSP Feature Configs > '0'\nThe amount of PaymentServiceProvider FeatureConfigurations is not bigger than 0!\n",
+      "statusTrace" : "  File \"/usr/local/lib/python3.10/site-packages/allure_commons/_allure.py\", line 172, in impl\n    return func(*a, **kw)\n  File \"/builds/1WcZhqPv/1/qa/ryd-tests/Tests/API/TT4/User/Lite/PSP/case/test__case__subscribe.py\", line 196, in test__case__subscribe_to_psp\n    assert user.worker_user_api.check__is_user_payment_method_configured_and_activated(\n  File \"/usr/local/lib/python3.10/site-packages/allure_commons/_allure.py\", line 172, in impl\n    return func(*a, **kw)\n  File \"/builds/1WcZhqPv/1/qa/ryd-tests/Workers/API/User.py\", line 903, in check__is_user_payment_method_configured_and_activated\n    is_it_working = self.assert_or_check(\n  File \"/builds/1WcZhqPv/1/qa/ryd-tests/Workers/Generic.py\", line 145, in assert_or_check\n    raise AssertionError(final_message)\n",
+      "steps" : [ {
+        "name" : "User Worker: Check: Is user Lite?",
+        "time" : {
+          "start" : 1667889658562,
+          "stop" : 1667889658593,
+          "duration" : 31
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "user",
+          "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-s-del4-bp_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      6369f9f01e6a3beb4e04502a\taccounts: [{'id': '6369f9f01e6a3beb4e045029', 'role': 'ACCOUNT_OWNER'}]\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.Lite\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: Country.Germany\tcurrency: Currency.EUR\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+        }, {
+          "name" : "car_index",
+          "value" : "0"
+        }, {
+          "name" : "test_id",
+          "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+        }, {
+          "name" : "hard_assert",
+          "value" : "True"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "User Worker: Payments: Get url payment details",
+        "time" : {
+          "start" : 1667889659021,
+          "stop" : 1667889659176,
+          "duration" : 155
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Request TT4: get url of payment subscription form",
+          "time" : {
+            "start" : 1667889659021,
+            "stop" : 1667889659175,
+            "duration" : 154
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "env",
+            "value" : "STA"
+          }, {
+            "name" : "auth_token",
+            "value" : "'55ab553d-ee3f-4dc3-ac35-c378d6db541e'"
+          }, {
+            "name" : "locale",
+            "value" : "German"
+          }, {
+            "name" : "provider",
+            "value" : "Braintree"
+          }, {
+            "name" : "method",
+            "value" : "PayPal"
+          }, {
+            "name" : "mbway_mobile",
+            "value" : "None"
+          }, {
+            "name" : "test_id",
+            "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "user",
+          "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-s-del4-bp_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      6369f9f01e6a3beb4e04502a\taccounts: [{'id': '6369f9f01e6a3beb4e045029', 'role': 'ACCOUNT_OWNER'}]\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.Lite\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: Country.Germany\tcurrency: Currency.EUR\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+        }, {
+          "name" : "mbway_mobile_number",
+          "value" : "None"
+        }, {
+          "name" : "test_id",
+          "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "WORKER: Braintree worker",
+        "time" : {
+          "start" : 1667889659206,
+          "stop" : 1667889686962,
+          "duration" : 27756
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "port",
+          "value" : "8050"
+        }, {
+          "name" : "test_id",
+          "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+        }, {
+          "name" : "working_for_api",
+          "value" : "True"
+        }, {
+          "name" : "headless",
+          "value" : "True"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "User Worker: Payments: provider gateway HEAD request",
+        "time" : {
+          "start" : 1667889690418,
+          "stop" : 1667889693522,
+          "duration" : 3104
+        },
+        "status" : "failed",
+        "statusMessage" : "AssertionError: PROVIDER GATEWAY HEAD request failed - test__scenario__buy_fuel__v4_lite_generic-1667889643394\n",
+        "statusTrace" : "  File \"/usr/local/lib/python3.10/site-packages/allure_commons/_allure.py\", line 172, in impl\n    return func(*a, **kw)\n  File \"/builds/1WcZhqPv/1/qa/ryd-tests/Workers/API/User.py\", line 65, in send_provider_head_request\n    self.assert_response(\"PROVIDER GATEWAY HEAD request\", test_id=test_id)\n  File \"/builds/1WcZhqPv/1/qa/ryd-tests/Workers/Generic.py\", line 66, in assert_response\n    assert_last_response_ok(\n  File \"/builds/1WcZhqPv/1/qa/ryd-tests/Tests/helpers/assert_last_response_ok.py\", line 145, in assert_last_response_ok\n    assert_or_check(\n  File \"/builds/1WcZhqPv/1/qa/ryd-tests/Tests/helpers/log_assertion_results.py\", line 57, in assert_or_check\n    raise AssertionError(error_message)\n",
+        "steps" : [ {
+          "name" : "Request TT4: provider gateway HEAD",
+          "time" : {
+            "start" : 1667889690419,
+            "stop" : 1667889693512,
+            "duration" : 3093
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "env",
+            "value" : "STA"
+          }, {
+            "name" : "auth_token",
+            "value" : "'55ab553d-ee3f-4dc3-ac35-c378d6db541e'"
+          }, {
+            "name" : "locale",
+            "value" : "German"
+          }, {
+            "name" : "provider",
+            "value" : "Braintree"
+          }, {
+            "name" : "redirect_url",
+            "value" : "None"
+          }, {
+            "name" : "nonce",
+            "value" : "'34d94c26-dca3-091a-7062-95b784aecc1d'"
+          }, {
+            "name" : "replace_preferred",
+            "value" : "None"
+          }, {
+            "name" : "test_id",
+            "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+          } ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "user",
+          "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-s-del4-bp_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      6369f9f01e6a3beb4e04502a\taccounts: [{'id': '6369f9f01e6a3beb4e045029', 'role': 'ACCOUNT_OWNER'}]\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.Lite\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: Country.Germany\tcurrency: Currency.EUR\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+        }, {
+          "name" : "redirect_url",
+          "value" : "None"
+        }, {
+          "name" : "nonce",
+          "value" : "'34d94c26-dca3-091a-7062-95b784aecc1d'"
+        }, {
+          "name" : "replace_preferred",
+          "value" : "None"
+        }, {
+          "name" : "test_id",
+          "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      }, {
+        "name" : "User Worker: Check: Is user payment method configured and activated?",
+        "time" : {
+          "start" : 1667889693523,
+          "stop" : 1667889693727,
+          "duration" : 204
+        },
+        "status" : "failed",
+        "statusMessage" : "AssertionError: Checking if the amount of PSP Feature Configs > '0'\nThe amount of PaymentServiceProvider FeatureConfigurations is not bigger than 0!\n",
+        "statusTrace" : "  File \"/usr/local/lib/python3.10/site-packages/allure_commons/_allure.py\", line 172, in impl\n    return func(*a, **kw)\n  File \"/builds/1WcZhqPv/1/qa/ryd-tests/Workers/API/User.py\", line 903, in check__is_user_payment_method_configured_and_activated\n    is_it_working = self.assert_or_check(\n  File \"/builds/1WcZhqPv/1/qa/ryd-tests/Workers/Generic.py\", line 145, in assert_or_check\n    raise AssertionError(final_message)\n",
+        "steps" : [ {
+          "name" : "User Worker: Get account psp feature",
+          "time" : {
+            "start" : 1667889693548,
+            "stop" : 1667889693708,
+            "duration" : 160
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "Request TT4: get feature by ID",
+            "time" : {
+              "start" : 1667889693563,
+              "stop" : 1667889693690,
+              "duration" : 127
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ ],
+            "parameters" : [ {
+              "name" : "env",
+              "value" : "STA"
+            }, {
+              "name" : "auth_token",
+              "value" : "'55ab553d-ee3f-4dc3-ac35-c378d6db541e'"
+            }, {
+              "name" : "account_id",
+              "value" : "'6369f9f01e6a3beb4e045029'"
+            }, {
+              "name" : "feature_id",
+              "value" : "'psp'"
+            }, {
+              "name" : "locale",
+              "value" : "German"
+            }, {
+              "name" : "test_id",
+              "value" : "None"
+            } ],
+            "stepsCount" : 0,
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "hasContent" : true
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "user",
+            "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-s-del4-bp_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      6369f9f01e6a3beb4e04502a\taccounts: [{'id': '6369f9f01e6a3beb4e045029', 'role': 'ACCOUNT_OWNER'}]\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.Lite\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: Country.Germany\tcurrency: Currency.EUR\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+          }, {
+            "name" : "account_index",
+            "value" : "0"
+          }, {
+            "name" : "test_id",
+            "value" : "None"
+          } ],
+          "stepsCount" : 1,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "user",
+          "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-s-del4-bp_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      6369f9f01e6a3beb4e04502a\taccounts: [{'id': '6369f9f01e6a3beb4e045029', 'role': 'ACCOUNT_OWNER'}]\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.Lite\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: Country.Germany\tcurrency: Currency.EUR\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+        }, {
+          "name" : "account_index",
+          "value" : "0"
+        }, {
+          "name" : "setting_up_process",
+          "value" : "True"
+        }, {
+          "name" : "is_preferred",
+          "value" : "None"
+        }, {
+          "name" : "hard_assert",
+          "value" : "True"
+        }, {
+          "name" : "test_id",
+          "value" : "None"
+        } ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "teardown__graylog_links",
+        "value" : "<SubRequest 'teardown__graylog_links' for <Function test__scenario__scan__v4_lite_buy_fuel[BP]>>"
+      }, {
+        "name" : "environment",
+        "value" : "STA"
+      }, {
+        "name" : "headless",
+        "value" : "True"
+      }, {
+        "name" : "payment_setup",
+        "value" : "Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone"
+      }, {
+        "name" : "jenkins_checks",
+        "value" : "False"
+      }, {
+        "name" : "service_health_checks",
+        "value" : "True"
+      }, {
+        "name" : "test_id",
+        "value" : "'test__scenario__buy_fuel__v4_lite_generic-1667889643394'"
+      }, {
+        "name" : "user",
+        "value" : "User:\tenvironment: Env.STA\temail:    txn.test+-s-del4-bp_-11081@thinxnet.com\tpass:     Test1234\tforename: TestFirstName\tlastname: TestLastName\treferrer: Test\tuid:      6369f9f01e6a3beb4e04502a\taccounts: [{'id': '6369f9f01e6a3beb4e045029', 'role': 'ACCOUNT_OWNER'}]\tcountry:  Country.Germany\tlocale:   Locale.German\taddress:  Country.Germany, München, 80636, Blutenburgstrasse, 18\tstatus:   Status.Lite\tclient:   None\ttype:     CustomerType.Lite\tp. setup: Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone\tmpm setup: None\ttax id:   None\ttax ctry: Country.Germany\tcurrency: Currency.EUR\texp tax:  VAT.VAT_19\tphone #:  None\tnickname: None\tsubscription: ThinxNetSubscriptionPeriod.Subscriptionless ThinxNetSubscriptionPayment.NONE"
+      }, {
+        "name" : "mark_xfail",
+        "value" : "None"
+      }, {
+        "name" : "replace_preferred",
+        "value" : "None"
+      }, {
+        "name" : "is_first",
+        "value" : "None"
+      } ],
+      "stepsCount" : 9,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "6ae5652d29103875",
+      "name" : "log",
+      "source" : "6ae5652d29103875.txt",
+      "type" : "text/plain",
+      "size" : 1192319
+    }, {
+      "uid" : "8e2a51f825a83475",
+      "name" : "stdout",
+      "source" : "8e2a51f825a83475.txt",
+      "type" : "text/plain",
+      "size" : 747
+    }, {
+      "uid" : "91ae776b2cf25563",
+      "name" : "stderr",
+      "source" : "91ae776b2cf25563.txt",
+      "type" : "text/plain",
+      "size" : 268
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 37,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "teardown__archive_user::0",
+    "time" : {
+      "start" : 1667889693877,
+      "stop" : 1667889693878,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "teardown__graylog_links::0",
+    "time" : {
+      "start" : 1667889693878,
+      "stop" : 1667889693879,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "country__PL"
+  }, {
+    "name" : "tag",
+    "value" : "country__PT"
+  }, {
+    "name" : "tag",
+    "value" : "country__NL"
+  }, {
+    "name" : "tag",
+    "value" : "country__LU"
+  }, {
+    "name" : "tag",
+    "value" : "country__LI"
+  }, {
+    "name" : "tag",
+    "value" : "country__ES"
+  }, {
+    "name" : "tag",
+    "value" : "country__DK"
+  }, {
+    "name" : "tag",
+    "value" : "country__DE"
+  }, {
+    "name" : "tag",
+    "value" : "country__CH"
+  }, {
+    "name" : "tag",
+    "value" : "country__BE"
+  }, {
+    "name" : "tag",
+    "value" : "country__AT"
+  }, {
+    "name" : "tag",
+    "value" : "settle_mode_generic"
+  }, {
+    "name" : "tag",
+    "value" : "station_chain__S_and_B"
+  }, {
+    "name" : "tag",
+    "value" : "station_chain__Tokheim"
+  }, {
+    "name" : "tag",
+    "value" : "station_chain__Ratio"
+  }, {
+    "name" : "tag",
+    "value" : "station_chain__Phoenix"
+  }, {
+    "name" : "tag",
+    "value" : "station_chain__Hectronic"
+  }, {
+    "name" : "tag",
+    "value" : "station_chain__Gasodata"
+  }, {
+    "name" : "tag",
+    "value" : "station_chain__Bungalski"
+  }, {
+    "name" : "tag",
+    "value" : "station_chain__BiCA"
+  }, {
+    "name" : "tag",
+    "value" : "station_chain__NoOp"
+  }, {
+    "name" : "tag",
+    "value" : "station_generic"
+  }, {
+    "name" : "tag",
+    "value" : "user_lite"
+  }, {
+    "name" : "tag",
+    "value" : "buy_fuel"
+  }, {
+    "name" : "tag",
+    "value" : "order_automatic"
+  }, {
+    "name" : "tag",
+    "value" : "flow_v4"
+  }, {
+    "name" : "tag",
+    "value" : "l3"
+  }, {
+    "name" : "tag",
+    "value" : "generic"
+  }, {
+    "name" : "tag",
+    "value" : "test_scenario"
+  }, {
+    "name" : "tag",
+    "value" : "payment_method_chain"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Tests.API.TT4.User.Lite.FuelPurchase.Automatic.v4"
+  }, {
+    "name" : "suite",
+    "value" : "test__scenario__v4_fuel_purchase__generic"
+  }, {
+    "name" : "host",
+    "value" : "runner-1wczhqpv-project-82-concurrent-1vhjhj"
+  }, {
+    "name" : "thread",
+    "value" : "37-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "Tests.API.TT4.User.Lite.FuelPurchase.Automatic.v4.test__scenario__v4_fuel_purchase__generic"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "mark_xfail",
+    "value" : "'No fail expected'"
+  }, {
+    "name" : "payment_setup",
+    "value" : "Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ "station_generic", "l3", "station_chain__Phoenix", "station_chain__NoOp", "station_chain__Gasodata", "station_chain__Tokheim", "country__CH", "user_lite", "station_chain__Ratio", "buy_fuel", "country__ES", "payment_method_chain", "country__AT", "station_chain__BiCA", "generic", "country__PL", "settle_mode_generic", "country__LI", "station_chain__S_and_B", "station_chain__Hectronic", "country__DE", "station_chain__Bungalski", "flow_v4", "country__NL", "country__PT", "country__BE", "order_automatic", "country__LU", "test_scenario", "country__DK" ]
+  },
+  "source" : "2b9dfc72e3adc001.json",
+  "parameterValues" : [ "'No fail expected'", "Payment setup:\tPaymentProvider.Braintree\tPaymentMethod.PayPal\tNone\tNone\tNone" ]
+}

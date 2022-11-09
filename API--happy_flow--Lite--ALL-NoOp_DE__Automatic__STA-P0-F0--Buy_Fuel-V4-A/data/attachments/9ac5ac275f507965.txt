@@ -1,0 +1,9 @@
+  0%|          | 0/20 [00:00<?, ?it/s]  0%|          | 0/20 [00:01<?, ?it/s]
+  0%|          | 0/90 [00:00<?, ?it/s]  1%|          | 1/90 [00:05<07:48,  5.26s/it]  1%|          | 1/90 [00:10<15:39, 10.55s/it]
+  0%|          | 0/90 [00:00<?, ?it/s]  0%|          | 0/90 [00:05<?, ?it/s]
+  0%|          | 0/60 [00:00<?, ?it/s]PendingDeprecationWarning: PdfFileReader was renamed to PdfReader. PdfFileReader will be removed [model.py:205]
+  0%|          | 0/60 [00:10<?, ?it/s]
+PendingDeprecationWarning: PdfFileReader was renamed to PdfReader. PdfFileReader will be removed [model.py:205]
+PendingDeprecationWarning: PdfFileReader was renamed to PdfReader. PdfFileReader will be removed [model.py:205]
+polling for updated event EventType.Fuel_top_up:   0%|          | 0/36 [00:00<?, ?it/s]polling for updated event EventType.Fuel_top_up:   0%|          | 0/36 [00:10<?, ?it/s]
+polling for updated event EventType.Payment:   0%|          | 0/36 [00:00<?, ?it/s]polling for updated event EventType.Payment:   0%|          | 0/36 [00:10<?, ?it/s]
